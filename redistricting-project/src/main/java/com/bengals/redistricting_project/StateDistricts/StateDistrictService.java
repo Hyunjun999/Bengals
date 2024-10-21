@@ -1,20 +1,20 @@
-package com.bengals.redistricting_project;
+package com.bengals.redistricting_project.StateDistricts;
 
-import com.bengals.redistricting_project.Collection.StateDistrict;
+import com.bengals.redistricting_project.StateDistricts.Collections.StateDistrict;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StateService {
+public class StateDistrictService {
 
     private final StateDistrictRepository stateDistrictRepository;
 
-    public StateService(StateDistrictRepository stateDistrictRepository) {
+    public StateDistrictService(StateDistrictRepository stateDistrictRepository) {
         this.stateDistrictRepository = stateDistrictRepository;
     }
 
     public StateDistrict findStateDistricts(String state) {
         for (StateDistrict stateDistrict : stateDistrictRepository.findAll()) {
-            if (stateDistrict.getName().equals(state)) {
+            if (stateDistrict.getName().startsWith(state)) {
                 return stateDistrict;
             }
         }

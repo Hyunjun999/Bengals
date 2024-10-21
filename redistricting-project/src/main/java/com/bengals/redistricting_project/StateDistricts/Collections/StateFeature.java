@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.Collection;
+package com.bengals.redistricting_project.StateDistricts.Collections;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
