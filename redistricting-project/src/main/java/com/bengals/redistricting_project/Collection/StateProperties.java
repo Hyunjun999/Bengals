@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.AL.Collection;
+package com.bengals.redistricting_project.Collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
-public class ALProperties {
+public class StateProperties {
     private int total_pop;
     private int vote_pop;
     private int total_asn;

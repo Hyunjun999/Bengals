@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.AL.Collection;
+package com.bengals.redistricting_project.Collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
-public class ALCrsProperties {
+public class StateCrsProperties {
     private String name;
 }

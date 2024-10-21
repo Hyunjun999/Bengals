@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.MS.Collection;
+package com.bengals.redistricting_project.Collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 
-public class MSGeometry {
+public class StateGeometry {
     private String type;
     private List<List<List<Double>>> coordinates;
 }

@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.MS.Collection;
+package com.bengals.redistricting_project.Collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
-public class MSFeature {
+public class StateCrs {
     private String type;
-    private MSProperties properties;
-    private MSGeometry geometry;
+    private StateCrsProperties properties;
 }

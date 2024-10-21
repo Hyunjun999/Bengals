@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.MS.Collection;
+package com.bengals.redistricting_project.Collection;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,16 +10,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(collection = "MSdistrict")
+@Document(collection = "StateDistrict")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
-public class MSDistrict {
+public class StateDistrict {
     @Id
     private ObjectId id;
     private String type;
-    private MSCrs crs;
-    private List<MSFeature> features;
+    private String name;
+    private StateCrs crs;
+    private List<StateFeature> features;
 }

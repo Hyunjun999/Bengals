@@ -1,6 +1,5 @@
 package com.bengals.redistricting_project.PA;
 
-import com.bengals.redistricting_project.AL.Collection.ALDistrict;
 import com.bengals.redistricting_project.PA.Collection.PADistrict;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
