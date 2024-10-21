@@ -8,8 +8,8 @@ pd.set_option('display.max_columns', None)
 def main():
     pa_file = ['./dataset/PA_2020_vtd20/tl_2020_42_vtd20.shp', './dataset/state_vtd_2020/pa_vtd_2020.csv',
                "EPSG:4269", './dataset/Precinct/PA_preprocessed.json', "PA"]
-    ms_file = ['./dataset/MS_2020_vtd20/MS_VotingPrecincts_2020.shp', './dataset/state_vtd_2020/ms_vtd_2020.csv',
-               "EPSG:3814", './dataset/Precinct/MS_preprocessed.json', "MS"]
+    ms_file = ['./dataset/MS_2020_vtd20/tl_2020_28_vtd20.shp', './dataset/state_vtd_2020/ms_vtd_2020.csv',
+               "EPSG:4269", './dataset/Precinct/MS_preprocessed.json', "MS"]
     al_file = ['./dataset/AL_2020_vtd20/tl_2020_01_vtd20.shp', './dataset/state_vtd_2020/al_vtd_2020.csv',
                "EPSG:4269", './dataset/Precinct/AL_preprocessed.json', "AL"]
     

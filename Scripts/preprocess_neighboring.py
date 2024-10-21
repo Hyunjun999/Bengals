@@ -1,5 +1,4 @@
 import geopandas as gpd
-from gerrychain import Graph
 import json
 import pandas as pd
 import maup
@@ -33,7 +32,7 @@ def main():
     
     pa_file = ['./dataset/Precinct/PA_preprocessed.json', "EPSG:4269", 
                './dataset/Precinct/PA_neigh_dist.shp', "./dataset/District/pa_cvap_2020_cd.geojson","PA"]
-    ms_file = ['./dataset/Precinct/MS_preprocessed_4269.json', "EPSG:3814", 
+    ms_file = ['./dataset/Precinct/MS_preprocessed.json', "EPSG:4269", 
                './dataset/Precinct/MS_neigh_dist.shp', "./dataset/District/ms_cvap_2020_cd.geojson", "MS"]
     al_file = ['./dataset/Precinct/AL_preprocessed.json', "EPSG:4269", 
                './dataset/Precinct/AL_neigh_dist.shp', "./dataset/District/al_cvap_2020_cd.geojson", "AL"]
@@ -42,57 +41,61 @@ def main():
     
     for item in precinct_file:
         print("Preprocessing neighbor for {}".format(item[-1]))
-        if(item[-1] == "MS"):
-            from pyproj import Transformer
+        # if(item[-1] == "MS"):
+        #     from pyproj import Transformer
 
-            # This is to convert the relative coordinate system from 3814 to 4269 (Longitute & Latitute system)
-            with open('./dataset/Precinct/MS_preprocessed.json', 'r') as f:
-                geojson_data = json.load(f)
+        #     # This is to convert the relative coordinate system from 3814 to 4269 (Longitute & Latitute system)
+        #     with open('./dataset/Precinct/MS_preprocessed.json', 'r') as f:
+        #         geojson_data = json.load(f)
 
-            # Define the source and destination EPSG codes
-            source_epsg = 'EPSG:3814'  
-            dest_epsg = 'EPSG:4269'    
+        #     # Define the source and destination EPSG codes
+        #     source_epsg = 'EPSG:3814'  
+        #     dest_epsg = 'EPSG:4269'    
 
-            # Initialize the transformer
-            transformer = Transformer.from_crs(source_epsg, dest_epsg, always_xy=True)
+        #     # Initialize the transformer
+        #     transformer = Transformer.from_crs(source_epsg, dest_epsg, always_xy=True)
 
-            # Function to transform coordinates
-            def transform_coords(coords):
-                if isinstance(coords[0], list):  # In case of nested coordinates (polygons, multipolygons)
-                    return [transform_coords(c) for c in coords]
-                else:
-                    return transformer.transform(coords[0], coords[1])
+        #     # Function to transform coordinates
+        #     def transform_coords(coords):
+        #         if isinstance(coords[0], list):  # In case of nested coordinates
+        #             return [transform_coords(c) for c in coords]
+        #         else:
+        #             return transformer.transform(coords[0], coords[1])
 
-            # Transform all the polygon/multipolygon coordinates in the GeoJSON
-            for feature in geojson_data['features']:
-                geometry_type = feature['geometry']['type']
-                if geometry_type == 'Polygon':
-                    feature['geometry']['coordinates'] = [transform_coords(ring) for ring in feature['geometry']['coordinates']]
-                elif geometry_type == 'MultiPolygon':
-                    feature['geometry']['coordinates'] = [[transform_coords(ring) for ring in poly] for poly in feature['geometry']['coordinates']]
+        #     # Transform all the polygon coordinates in the GeoJSON
+        #     for feature in geojson_data['features']:
+        #         geometry_type = feature['geometry']['type']
+        #         if geometry_type == 'Polygon':
+        #             feature['geometry']['coordinates'] = [transform_coords(ring) for ring in feature['geometry']['coordinates']]
+                
 
-            # Save the transformed geojson
-            with open('./dataset/Precinct/MS_preprocessed_4269.json', 'w') as f:
-                json.dump(geojson_data, f, indent=4)
+        #     # Save the transformed geojson
+        #     with open('./dataset/Precinct/MS_preprocessed_4269.json', 'w') as f:
+        #         json.dump(geojson_data, f, indent=4)
+                
+            # df = gpd.read_file(item[0])
+            # df = gpd.GeoDataFrame(df, geometry="geometry")
+            # df = df.set_crs("EPSG:4269", allow_override=True)
+            # df.to_file('./dataset/Precinct/MS_preprocessed_4269.geojson')
+            
 
-        df = gpd.read_file(item[0])
+        gdf = gpd.read_file(item[0]) 
     
         neighbors = {}
 
-        print("Iteration length: {}".format(len(df)))
-        for idx, row in tqdm(df.iterrows()):
-            # Find all polygons that touch the current polygon
+        print("Iteration length: {}".format(len(gdf)))
+        for idx, row in tqdm(gdf.iterrows()):
             # neighbor_polygons = df[df.geometry.touches(row["geometry"].geometry)].index.tolist()
             neighbor_polygons = []
-            for idx2, row2 in df.iterrows():
+            for idx2, row2 in gdf.iterrows():
                 if (row["geometry"].intersects(row2["geometry"])):
                     neighbor_polygons.append(idx2)
                     
-                    # Optionally remove the current polygon's index if it's in the list
+                    # remove myself from the current polygon's index
                     if idx in neighbor_polygons:
                         neighbor_polygons.remove(idx)
             neighbor_polygons = str(neighbor_polygons) + ""
-            # Store the neighbors
+            # Store the neighbors & other existing informations
             neighbors[row["PRECINCTID"]] = {}
             neighbors[row["PRECINCTID"]]["REL_ID"] = idx
             neighbors[row["PRECINCTID"]]["NEIGH_LIST"] = neighbor_polygons
@@ -147,10 +150,13 @@ def main():
         
         # if(maup.doctor(df_copy)):
         crs_gdf = gpd.GeoDataFrame(df_copy, geometry="geometry")
+        
+        # Checks for any boundary related problems with maup.doctor
         if(maup.doctor(crs_gdf)):
             crs_gdf = crs_gdf.set_crs("EPSG:4269")
             crs_gdf.to_file(item[2], driver='ESRI Shapefile')
             print("Process done for {}...!".format(item[-1]))
+            
     print("Total Process Done...!")
 
 if __name__ == "__main__":
