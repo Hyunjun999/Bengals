@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.Ensembles.EnsembleCurves.Collections;
+package com.bengals.redistricting_project.StateDistricts.Collections;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,14 +10,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(collection = "EnsembleCurve")
+@Document(collection = "PAdistrict")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EnsembleCurve {
+
+public class PAStateDistrict {
     @Id
     private ObjectId id;
-    private String state;
-    private List<EnsembleParty> parties;
+    private String type;
+    private String name;
+    private StateCrs crs;
+    private List<StateFeature> features;
 }
