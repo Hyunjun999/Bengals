@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.StateDistricts;
+package com.bengals.redistricting_project.StateDistricts.Repository;
 
 import com.bengals.redistricting_project.StateDistricts.Collections.StateDistrict;
 import org.bson.types.ObjectId;

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class StateDistrictController {
     private final StateDistrictService stateDistrictService;
@@ -15,6 +16,7 @@ public class StateDistrictController {
 
     @GetMapping("/{state}/all/districts")
     public StateDistrict getStateDistricts(@PathVariable String state) {
-        return stateDistrictService.findStateDistricts(state);
+        return stateDistrictService.
+                findStateDistricts(state);
     }
 }

@@ -10,13 +10,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
+@Document(collection = "MSdistrict")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
-@Document(collection = "StateDistrict")
-public class StateDistrict {
+public class MSStateDistrict {
     @Id
     private ObjectId id;
     private String type;
