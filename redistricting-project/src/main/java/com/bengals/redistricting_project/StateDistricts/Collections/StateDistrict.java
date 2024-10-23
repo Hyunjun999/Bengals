@@ -20,7 +20,6 @@ public class StateDistrict {
     @Id
     private ObjectId id;
     private String type;
-    private String name;
     private StateCrs crs;
     private List<StateFeature> features;
 }

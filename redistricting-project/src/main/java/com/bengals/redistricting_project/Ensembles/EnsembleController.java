@@ -10,7 +10,6 @@ public class EnsembleController {
 
     private final EnsembleService ensembleBWService;
 
-
     public EnsembleController(EnsembleService ensembleService) {
         this.ensembleBWService = ensembleService;
     }

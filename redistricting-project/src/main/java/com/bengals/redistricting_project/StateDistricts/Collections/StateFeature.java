@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 
 public class StateFeature {
     private String type;
+    private int index;
     private StateProperties properties;
     private StateGeometry geometry;
 }

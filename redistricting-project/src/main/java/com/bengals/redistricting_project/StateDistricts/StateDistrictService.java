@@ -32,7 +32,6 @@ public class StateDistrictService {
             stateDistrict = StateDistrict.builder()
                     .id(alStateDistrict.getId())
                     .type(alStateDistrict.getType())
-                    .name(alStateDistrict.getName())
                     .crs(alStateDistrict.getCrs())
                     .features(alStateDistrict.getFeatures())
                     .build();
@@ -42,7 +41,6 @@ public class StateDistrictService {
             stateDistrict = StateDistrict.builder()
                     .id(msStateDistrict.getId())
                     .type(msStateDistrict.getType())
-                    .name(msStateDistrict.getName())
                     .crs(msStateDistrict.getCrs())
                     .features(msStateDistrict.getFeatures())
                     .build();
@@ -51,7 +49,6 @@ public class StateDistrictService {
             stateDistrict = StateDistrict.builder()
                     .id(paStateDistrict.getId())
                     .type(paStateDistrict.getType())
-                    .name(paStateDistrict.getName())
                     .crs(paStateDistrict.getCrs())
                     .features(paStateDistrict.getFeatures())
                     .build();
