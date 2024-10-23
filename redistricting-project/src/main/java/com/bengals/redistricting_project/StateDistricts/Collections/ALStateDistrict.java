@@ -20,6 +20,5 @@ public class ALStateDistrict {
     @Id
     private ObjectId id;
     private String type;
-    private StateCrs crs;
     private List<StateFeature> features;
 }

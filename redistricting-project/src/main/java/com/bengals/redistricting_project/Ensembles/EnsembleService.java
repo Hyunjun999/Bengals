@@ -45,6 +45,7 @@ public class EnsembleService {
         } else if (state.equals("MS")) {
             msEnsembleRepository.findAll();
             MSEnsemble msEnsemble = msEnsembleRepository.findAll().get(0);
+            System.out.println(msEnsembleRepository.findAll());
             ensemble = Ensemble.builder()
                     .id(msEnsemble.getId())
                     .type(msEnsemble.getType())

@@ -20,6 +20,5 @@ public class MSStateDistrict {
     @Id
     private ObjectId id;
     private String type;
-    private StateCrs crs;
     private List<StateFeature> features;
 }
