@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.Ensembles.EnsembleBWs.Collections;
+package com.bengals.redistricting_project.Ensembles.Collections;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-public class EnsembleDistrict {
+public class BWDistrict {
     private String name;
     private double min;
     private double lowerQuartile;

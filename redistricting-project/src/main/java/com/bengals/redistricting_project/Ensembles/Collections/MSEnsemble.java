@@ -1,5 +1,6 @@
-package com.bengals.redistricting_project.Ensembles.EnsembleBWs.Collections;
+package com.bengals.redistricting_project.Ensembles.Collections;
 
+import com.bengals.redistricting_project.StateDistricts.Collections.StateCrs;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,15 +11,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(collection = "EnsembleBoxWhisker")
+
+@Document(collection = "MSEnsemble")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-public class EnsembleBW {
+public class MSEnsemble {
     @Id
     private ObjectId id;
-    private String state;
-    private List<EnsembleDistrict> districts;
+    private String type;
+    private StateCrs crs;
+    private List<EnsembleFeature> features;
 }

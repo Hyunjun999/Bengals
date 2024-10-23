@@ -1,6 +1,5 @@
 package com.bengals.redistricting_project.StateDistricts;
 
-import com.bengals.redistricting_project.StateDistricts.Collections.ALStateDistrict;
 import com.bengals.redistricting_project.StateDistricts.Collections.StateDistrict;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
