@@ -17,7 +17,6 @@ import java.util.List;
 public class Ensemble {
     @Id
     private ObjectId id;
-    private String type;
-    private StateCrs crs;
-    private List<EnsembleFeature> features;
+    private List<NonWhite> non_white;
+    private SeatsVotes seatsVotes;
 }

@@ -1,22 +1,21 @@
 package com.bengals.redistricting_project.Ensembles;
 
-import com.bengals.redistricting_project.Ensembles.Collections.Ensemble;
+import com.bengals.redistricting_project.Ensembles.Collections.EnsembleDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EnsembleController {
-
-    private final EnsembleService ensembleBWService;
+    private final EnsembleService ensembleService;
 
     public EnsembleController(EnsembleService ensembleService) {
-        this.ensembleBWService = ensembleService;
+        this.ensembleService = ensembleService;
     }
 
     @GetMapping("/{state}/ensemble")
-    public Ensemble getEnsemble(@PathVariable String state) {
-        return ensembleBWService.findEnsemble(state);
+    public EnsembleDto getEnsemble(@PathVariable String state) {
+        return ensembleService.findEnsemble(state);
     }
 
 }

@@ -6,11 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class EnsembleFeature {
-    private String type;
-    private EnsembleProperties properties;
-    private EnsembleGeometry geometry;
+public class NonWhite {
+    private double min;
+    private double lowerQuartile;
+    private double median;
+    private double upperQuartile;
+    private double max;
+    private double average;
 }

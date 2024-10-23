@@ -20,6 +20,5 @@ public class PAStateDistrict {
     @Id
     private ObjectId id;
     private String type;
-    private String district_id;
     private List<StateFeature> features;
 }

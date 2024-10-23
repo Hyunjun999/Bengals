@@ -5,13 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class EnsembleGeometry {
-    private String type;
-    private List<List<List<Double>>> coordinates;
+public class SV {
+    private int votes;
+    private int seats;
 }
