@@ -17,5 +17,4 @@ public class EnsembleController {
     public EnsembleDto getEnsemble(@PathVariable String state) {
         return ensembleService.findEnsemble(state);
     }
-
 }

@@ -9,7 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SV {
-    private int votes;
-    private int seats;
+public class BW {
+    private double min;
+    private double lowerQuartile;
+    private double median;
+    private double upperQuartile;
+    private double max;
+    private double average;
 }

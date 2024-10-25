@@ -11,7 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class EnsembleDto {
-    private List<NonWhite> box_whisker;
-    private SeatsVotes minority_curve;
+    private List<BW> box_whisker;
+    private List<VoteSeats> vote_seats;
 }

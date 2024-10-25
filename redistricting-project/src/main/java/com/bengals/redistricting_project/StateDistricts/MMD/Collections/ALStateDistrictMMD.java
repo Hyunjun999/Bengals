@@ -1,6 +1,7 @@
-package com.bengals.redistricting_project.Ensembles.Collections;
+package com.bengals.redistricting_project.StateDistricts.MMD.Collections;
 
 import com.bengals.redistricting_project.StateDistricts.Collections.StateCrs;
+import com.bengals.redistricting_project.StateDistricts.Collections.StateFeature;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,15 +12,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-
-@Document(collection = "MSEnsemble")
+@Document(collection = "ALdistrictMMD")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MSEnsemble {
+
+public class ALStateDistrictMMD {
     @Id
     private ObjectId id;
-    private List<NonWhite> non_white;
-    private SeatsVotes seatsVotes;
+    private String type;
+    private String name;
+    private StateCrs stateCrs;
+    private List<StateFeature> features;
 }

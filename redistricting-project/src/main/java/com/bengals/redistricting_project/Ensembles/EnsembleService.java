@@ -1,50 +1,44 @@
 package com.bengals.redistricting_project.Ensembles;
 
 import com.bengals.redistricting_project.Ensembles.Collections.*;
-import com.bengals.redistricting_project.Ensembles.Repository.ALEnsembleRepository;
-import com.bengals.redistricting_project.Ensembles.Repository.MSEnsembleRepository;
-import com.bengals.redistricting_project.Ensembles.Repository.PAEnsembleRepository;
+import com.bengals.redistricting_project.Ensembles.Repository.EnsembleRepository;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class EnsembleService {
-    private final MSEnsembleRepository msEnsembleRepository;
-    private final ALEnsembleRepository alEnsembleRepository;
-    private final PAEnsembleRepository paEnsembleRepository;
+    private final EnsembleRepository ensembleRepository;
 
-    public EnsembleService(MSEnsembleRepository msEnsembleRepository,
-                           ALEnsembleRepository alEnsembleRepository,
-                           PAEnsembleRepository paEnsembleRepository) {
-        this.msEnsembleRepository = msEnsembleRepository;
-        this.alEnsembleRepository = alEnsembleRepository;
-        this.paEnsembleRepository = paEnsembleRepository;
+    public EnsembleService(
+            EnsembleRepository ensembleRepository
+    ) {
+        this.ensembleRepository = ensembleRepository;
     }
 
     public EnsembleDto findEnsemble(String state) {
-        EnsembleDto ensembleDto = new EnsembleDto();
+        Ensemble ensemble = null;
+        Optional<Ensemble> optional = Optional.empty();
+        EnsembleDto ensembleDto = null;
+        String objectID = "";
+
         if (state.equals("AL")) {
-            ALEnsemble alEnsemble = alEnsembleRepository.findAll().get(0);
-            ensembleDto = EnsembleDto.builder()
-                    .box_whisker(alEnsemble.getNon_white())
-                    .minority_curve(alEnsemble.getSeatsVotes())
-                    .build();
+            objectID = "";
 
         } else if (state.equals("PA")) {
-            paEnsembleRepository.findAll();
-            PAEnsemble paEnsemble = paEnsembleRepository.findAll().get(0);
-            ensembleDto = EnsembleDto.builder()
-                    .box_whisker(paEnsemble.getNon_white())
-                    .minority_curve(paEnsemble.getSeatsVotes())
-                    .build();
-            System.out.println(ensembleDto.getMinority_curve());
+            objectID = "671ab949e69bb8486e14c486";
         } else if (state.equals("MS")) {
-            msEnsembleRepository.findAll();
-            MSEnsemble msEnsemble = msEnsembleRepository.findAll().get(0);
-            ensembleDto = EnsembleDto.builder()
-                    .box_whisker(msEnsemble.getNon_white())
-                    .minority_curve(msEnsemble.getSeatsVotes())
-                    .build();
+            objectID = "671ab5fde69bb8486e14c47b";
         }
+
+        optional = ensembleRepository.findById(new ObjectId(objectID));
+        if (optional.isPresent()) ensemble = optional.get();
+        ensembleDto = EnsembleDto.builder()
+                .box_whisker(ensemble.getBox_whisker())
+                .vote_seats(ensemble.getVote_seats())
+                .build();
+
         return ensembleDto;
     }
 }
