@@ -1,7 +1,7 @@
 package com.bengals.redistricting_project.StateDistricts;
 
 import com.bengals.redistricting_project.StateDistricts.Collections.StateDistrictDto;
-import com.bengals.redistricting_project.StateDistricts.MMD.StateDistrictServicsMMD;
+import com.bengals.redistricting_project.StateDistricts.MMD.StateDistrictServiceMMD;
 import com.bengals.redistricting_project.StateDistricts.SMD.StateDistrictServiceSMD;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,12 +12,12 @@ import java.util.List;
 
 @RestController
 public class StateDistrictController {
-    private final StateDistrictServicsMMD stateDistrictServicsMMD;
+    private final StateDistrictServiceMMD stateDistrictServiceMMD;
     private final StateDistrictServiceSMD stateDistrictServiceSMD;
 
-    public StateDistrictController(StateDistrictServicsMMD stateDistrictServicsMMD,
+    public StateDistrictController(StateDistrictServiceMMD stateDistrictServiceMMD,
                                    StateDistrictServiceSMD stateDistrictServiceSMD) {
-        this.stateDistrictServicsMMD = stateDistrictServicsMMD;
+        this.stateDistrictServiceMMD = stateDistrictServiceMMD;
         this.stateDistrictServiceSMD = stateDistrictServiceSMD;
     }
 
@@ -28,7 +28,7 @@ public class StateDistrictController {
 
     @GetMapping("/{state}/all/districts/mmd")
     public List<StateDistrictDto> getStateDistrictsSMD(@PathVariable String state) {
-        return stateDistrictServicsMMD.findStateDistrictsMMD(state);
+        return stateDistrictServiceMMD.findStateDistrictsMMD(state);
     }
 
 

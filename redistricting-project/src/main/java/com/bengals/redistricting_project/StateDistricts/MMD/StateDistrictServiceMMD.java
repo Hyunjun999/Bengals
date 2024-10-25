@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class StateDistrictServicsMMD {
+public class StateDistrictServiceMMD {
 
     private final ALStateDistrictRepositoryMMD alStateDistrictRepositoryMMD;
     private final MSStateDistrictRepositoryMMD msStateDistrictRepositoryMMD;
     private final PAStateDistrictRepositoryMMD paStateDistrictRepositoryMMD;
 
-    public StateDistrictServicsMMD(ALStateDistrictRepositoryMMD alStateDistrictRepositoryMMD,
+    public StateDistrictServiceMMD(ALStateDistrictRepositoryMMD alStateDistrictRepositoryMMD,
                                    MSStateDistrictRepositoryMMD msStateDistrictRepositoryMMD,
                                    PAStateDistrictRepositoryMMD paStateDistrictRepositoryMMD
     ) {

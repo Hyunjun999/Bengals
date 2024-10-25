@@ -13,8 +13,12 @@ public class EnsembleController {
         this.ensembleService = ensembleService;
     }
 
-    @GetMapping("/{state}/ensemble")
-    public EnsembleDto getEnsemble(@PathVariable String state) {
-        return ensembleService.findEnsemble(state);
+    @GetMapping("/{state}/ensemble/smd")
+    public EnsembleDto getEnsembleSMD(@PathVariable String state) {
+        return ensembleService.findEnsembleSMD(state);
+    }
+    @GetMapping("/{state}/ensemble/mmd")
+    public EnsembleDto getEnsembleMMD(@PathVariable String state) {
+        return ensembleService.findEnsembleMMD(state);
     }
 }
