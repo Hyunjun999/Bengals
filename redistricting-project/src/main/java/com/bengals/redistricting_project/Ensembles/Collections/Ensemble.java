@@ -10,16 +10,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(collection = "EnsembleMMD")
-
+@Document(collection = "Ensemble")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-public class EnsembleMMD {
+public class Ensemble {
     @Id
     private ObjectId id;
+    private String state;
+    private String type;
     private List<BW> box_whisker;
     private List<VoteSeats> vote_seats;
 }
