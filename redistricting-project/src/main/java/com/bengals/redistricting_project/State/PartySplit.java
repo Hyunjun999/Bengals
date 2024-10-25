@@ -1,11 +1,13 @@
 package com.bengals.redistricting_project.State;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 public class PartySplit {
-    @JsonProperty("republicans")
-    private int Republicans;
+    @JsonProperty("ensemble")
+    private int Ensemble;
 
-    @JsonProperty("democrats")
-    private int Democrats;
+    @JsonProperty("random")
+    private int Random;
 }

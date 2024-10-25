@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class VoteSeats {
-    @JsonProperty("republicans")
+    @JsonProperty("Republicans")
     private double Republicans;
-    @JsonProperty("democrats")
+    @JsonProperty("Democrats")
     private double Democrats;
 }
