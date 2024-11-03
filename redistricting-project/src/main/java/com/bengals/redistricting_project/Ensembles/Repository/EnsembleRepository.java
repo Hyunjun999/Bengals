@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EnsembleRepository extends MongoRepository<Ensemble, ObjectId> {
-    public Ensemble findByStateAndType(String state, String type);
+    public Ensemble findByState(String state);
 }

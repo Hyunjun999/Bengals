@@ -2,11 +2,9 @@ package com.bengals.redistricting_project.Ensembles;
 
 import com.bengals.redistricting_project.Ensembles.Collections.*;
 import com.bengals.redistricting_project.Ensembles.Repository.EnsembleRepository;
-import com.bengals.redistricting_project.State.StateService;
-import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class EnsembleService {
@@ -16,12 +14,18 @@ public class EnsembleService {
         this.ensembleRepository = ensembleRepository;
     }
 
-    public EnsembleDto findEnsemble(String state, String type) {
-        Ensemble ensemble = ensembleRepository.findByStateAndType(state, type.toUpperCase());
-        EnsembleDto ensembleDto = EnsembleDto.builder()
+    public EnsembleDTO findEnsemble(String state) {
+        Ensemble ensemble = ensembleRepository.findByState(state);
+
+        EnsembleDTO ensembleDTO = EnsembleDTO.builder()
+                .state(ensemble.getState())
                 .box_whisker(ensemble.getBox_whisker())
                 .vote_seats(ensemble.getVote_seats())
+                .party_splits_bar(ensemble.getParty_splits_bar())
+                .op_district_bar(ensemble.getOp_district_bar())
+                .op_representatives_bar(ensemble.getOp_representatives_bar())
                 .build();
-        return ensembleDto;
+
+        return ensembleDTO;
     }
 }

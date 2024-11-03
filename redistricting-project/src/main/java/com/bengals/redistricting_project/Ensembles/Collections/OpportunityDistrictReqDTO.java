@@ -5,15 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BW {
-    private double min;
-    private double lowerQuartile;
-    private double median;
-    private double upperQuartile;
-    private double max;
-    private double average;
+public class OpportunityDistrictReqDTO {
+    private int op_districts;
 }

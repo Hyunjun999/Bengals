@@ -4,23 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Ensemble")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Ensemble {
-    @Id
-    private ObjectId id;
+
+public class EnsembleDTO {
     private String state;
     private BoxWhisker box_whisker;
     private VoteSeats vote_seats;
     private PartySplits party_splits_bar;
+
     private OpportunityDistrict op_district_bar;
     private OpportunityRepComponent op_representatives_bar;
 }
-

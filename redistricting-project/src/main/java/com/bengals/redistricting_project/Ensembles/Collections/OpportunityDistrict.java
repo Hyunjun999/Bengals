@@ -5,14 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-
-public class EnsembleDto {
-    private List<BW> box_whisker;
-    private List<VoteSeats> vote_seats;
+public class OpportunityDistrict {
+    private OpportunityDistrictRaceReqDTO SMD;
+    private OpportunityDistrictRaceReqDTO MMD;
 }

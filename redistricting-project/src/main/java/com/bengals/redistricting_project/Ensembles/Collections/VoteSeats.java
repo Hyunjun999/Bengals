@@ -1,10 +1,11 @@
 package com.bengals.redistricting_project.Ensembles.Collections;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -12,8 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class VoteSeats {
-    @JsonProperty("Republicans")
-    private double Republicans;
-    @JsonProperty("Democrats")
-    private double Democrats;
+    private List<VoteSeatsPartySplitsComponent> SMD;
+    private List<VoteSeatsPartySplitsComponent> MMD;
+    private DistrictType symmetry;
+    private DistrictType bias;
+    private Responsiveness responsiveness;
+
+    public static class DistrictType {
+        public double SMD;
+        public double MMD;
+    }
 }
