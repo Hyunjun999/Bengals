@@ -20,7 +20,7 @@ public class Ensemble {
     private BoxWhisker box_whisker;
     private VoteSeats vote_seats;
     private PartySplits party_splits_bar;
-    private OpportunityDistrict op_district_bar;
-    private OpportunityRepComponent op_representatives_bar;
+    private OpportunityDistrictReqDTO op_district_bar;
+    private OpportunityRepReqDTO op_representatives_bar;
 }
 

@@ -11,9 +11,9 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OpportunityDistrictRaceResDTO {
-    private List<OpportunityDistrictResCom> blk;
-    private List<OpportunityDistrictResCom> asn;
-    private List<OpportunityDistrictResCom> hsp;
-    private List<OpportunityDistrictResCom> non_wht;
+public class OpportunityRepRaceResDTO {
+    List<OpportunityRepResCom> blk;
+    List<OpportunityRepResCom> asn;
+    List<OpportunityRepResCom> hsp;
+    List<OpportunityRepResCom> non_wht;
 }

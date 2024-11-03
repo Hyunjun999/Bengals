@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OpportunityRepRaceComponent {
-    private int name;
+public class OpportunityRepReqCom {
     private int op_representatives;
 }

@@ -16,6 +16,6 @@ public class EnsembleDTO {
     private VoteSeats vote_seats;
     private PartySplits party_splits_bar;
 
-    private OpportunityDistrict op_district_bar;
-    private OpportunityRepComponent op_representatives_bar;
+    private OpportunityDistrictResDTO op_district_bar;
+    private OpportunityRepResDTO op_representatives_bar;
 }

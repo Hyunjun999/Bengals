@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OpportunityDistrictResDTO {
-    @JsonProperty("SMD")
-    private OpportunityDistrictRaceResDTO SMD;
-    @JsonProperty("MMD")
-    private OpportunityDistrictRaceResDTO MMD;
+public class OpportunityRepReqDTO {
+        private OpportunityRepRaceReqDTO SMD;
+        private OpportunityRepRaceReqDTO MMD;
 }
