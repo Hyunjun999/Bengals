@@ -4,5 +4,5 @@ import com.bengals.redistricting_project.StateDistricts.Collections.StateDistric
 import lombok.Data;
 
 @Data
-public class StateDistrictType extends StateDistrict {
+public class StateDistrictReqDTO extends StateDistrict {
 }

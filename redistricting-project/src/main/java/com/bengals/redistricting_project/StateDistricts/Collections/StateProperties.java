@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class StateProperties {
+    private String district_id;
+    private int num_dist;
     private int total_pop;
     private int vote_pop;
     private int total_asn;
@@ -16,7 +18,9 @@ public class StateProperties {
     private int vote_dem;
     private int vote_rep;
     private int total_vote;
-    private String win_cand;
+    private int rep_wins;
+    private int dem_wins;
+    private double op_threshold;
     private String win_pty;
     private String centroid;
 }

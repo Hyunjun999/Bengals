@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class Ensemble {
     @Id
     private ObjectId id;
@@ -23,4 +24,3 @@ public class Ensemble {
     private OpportunityDistrictReqDTO op_district_bar;
     private OpportunityRepReqDTO op_representatives_bar;
 }
-

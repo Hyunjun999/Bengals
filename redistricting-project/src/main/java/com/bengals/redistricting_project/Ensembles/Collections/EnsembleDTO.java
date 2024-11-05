@@ -15,7 +15,6 @@ public class EnsembleDTO {
     private BoxWhisker box_whisker;
     private VoteSeats vote_seats;
     private PartySplits party_splits_bar;
-
     private OpportunityDistrictResDTO op_district_bar;
     private OpportunityRepResDTO op_representatives_bar;
 }

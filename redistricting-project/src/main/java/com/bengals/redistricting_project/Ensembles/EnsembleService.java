@@ -217,6 +217,4 @@ public class EnsembleService {
             mmd.setNon_wht(newMmdRace);
         }
     }
-
-
 }

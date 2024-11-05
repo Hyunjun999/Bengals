@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class StateFeature {
+public class StateFeatureReqDTO {
     private String type;
     private StateProperties properties;
     private StateGeometry geometry;
