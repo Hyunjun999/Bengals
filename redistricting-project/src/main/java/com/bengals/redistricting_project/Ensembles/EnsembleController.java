@@ -1,6 +1,6 @@
 package com.bengals.redistricting_project.Ensembles;
 
-import com.bengals.redistricting_project.Ensembles.Collections.EnsembleDto;
+import com.bengals.redistricting_project.Ensembles.Collections.EnsembleDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +13,8 @@ public class EnsembleController {
         this.ensembleService = ensembleService;
     }
 
-    @GetMapping("/{state}/ensemble/{type}")
-    public EnsembleDto getEnsembleSMD(@PathVariable String state, @PathVariable String type) {
-        return ensembleService.findEnsemble(state, type);
+    @GetMapping("/{state}/ensemble")
+    public EnsembleDTO getEnsembleSMD(@PathVariable String state) {
+        return ensembleService.findEnsemble(state);
     }
 }

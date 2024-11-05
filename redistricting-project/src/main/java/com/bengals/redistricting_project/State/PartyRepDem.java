@@ -6,9 +6,9 @@ import lombok.Data;
 @Data
 public class PartyRepDem {
 
-    @JsonProperty("republicans")
-    private int Republicans;
+    @JsonProperty("Republicans")
+    private double Republicans;
 
-    @JsonProperty("democrats")
-    private int Democrats;
+    @JsonProperty("Democrats")
+    private double Democrats;
 }

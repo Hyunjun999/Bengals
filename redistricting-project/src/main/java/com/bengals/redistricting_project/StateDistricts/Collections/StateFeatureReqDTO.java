@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public  class StateCrsProperties {
-    private String name;
+public class StateFeatureReqDTO {
+    private String type;
+    private StateProperties properties;
+    private StateGeometry geometry;
 }

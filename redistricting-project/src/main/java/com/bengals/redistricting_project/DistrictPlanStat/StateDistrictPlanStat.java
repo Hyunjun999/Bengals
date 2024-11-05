@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.State;
+package com.bengals.redistricting_project.DistrictPlanStat;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -7,21 +7,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "State")
+@Document(collection = "StateDistrictPlanStatistics")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-public class State {
+public class StateDistrictPlanStat {
+    private String district_id;
     private String state;
-    private int total_pop;
-    private int vote_pop;
-    private RacialPop racial_pop;
-    private int total_seats;
+    private String dis_type;
     @JsonProperty("Republicans")
-    private double Republicans;
+    private int Republicans;
     @JsonProperty("Democrats")
-    private double Democrats;
-
+    private int Democrats;
+    private int op_districts;
+    private int safe_districts;
+    private double op_threshold;
 }

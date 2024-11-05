@@ -12,18 +12,9 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class VoteSeats {
+public class PartySplits {
     @JsonProperty("SMD")
-    private List<VoteSeatsPartySplitsComponent> SMD;
+    private List<PartySplitsBarComponent> SMD;
     @JsonProperty("MMD")
-    private List<VoteSeatsPartySplitsComponent> MMD;
-    private DistrictType symmetry;
-    private DistrictType bias;
-    private Responsiveness responsiveness;
-
-    public static class DistrictType {
-        public double SMD;
-        public double MMD;
-    }
+    private List<PartySplitsBarComponent> MMD;
 }
