@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class StateDistrictPlanStat {
     private String district_id;
     private String state;

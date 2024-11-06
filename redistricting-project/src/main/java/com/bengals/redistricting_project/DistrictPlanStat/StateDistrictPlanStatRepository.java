@@ -14,4 +14,7 @@ public interface StateDistrictPlanStatRepository extends MongoRepository<StateDi
 
     @Query("{ 'district_id': { $regex: '^?0.*_[0-9]+$', $options: 'i' } }")
     List<StateDistrictPlanStat> findByDistrictIdStartingWithAndEndingWithNumber(String state);
+
+    @Query("{ 'state': ?0, 'dis_type': ?1 }")
+    List<StateDistrictPlanStat> findByStateAndDisType(String state, String disType);
 }
