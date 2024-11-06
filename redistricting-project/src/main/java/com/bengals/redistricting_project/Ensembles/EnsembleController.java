@@ -14,7 +14,7 @@ public class EnsembleController {
     }
 
     @GetMapping("/{state}/ensemble")
-    public EnsembleDTO getEnsembleSMD(@PathVariable String state) {
+    public EnsembleDTO getEnsemble(@PathVariable String state) {
         return ensembleService.findEnsemble(state);
     }
 }

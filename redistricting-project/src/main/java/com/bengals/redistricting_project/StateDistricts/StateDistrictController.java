@@ -16,7 +16,7 @@ public class StateDistrictController {
     }
 
     @GetMapping("/{state}/all/districts/{disType}")
-    public List<List<StateDistrictReqDTO>> getStateDistricts(@PathVariable String state, @PathVariable String disType) {
+    public List<StateDistrictResDTO> getStateDistricts(@PathVariable String state, @PathVariable String disType) {
         if (disType.equalsIgnoreCase("MMD")) {
             return stateDistrictService.findAllMMDForOneState(state, disType);
         }
