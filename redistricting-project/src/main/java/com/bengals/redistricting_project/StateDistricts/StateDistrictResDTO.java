@@ -18,5 +18,5 @@ public class StateDistrictResDTO {
     private ObjectId id;
     private String type;
     private StateCrs crs;
-    private List<List<StateFeatureReqDTO>> features;
+    private List<StateFeatureReqDTO> features;
 }

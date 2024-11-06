@@ -18,104 +18,109 @@ public class StateDistrictService {
     public List<StateDistrictResDTO> findAllMMDForOneState(String state, String disType) {
         List<StateDistrictReqDTO> districtPlan = stateDistrictRepository.findByDistrictIdStartingWithAndType(state, disType);
 
-        List<StateFeatureReqDTO> features = new ArrayList<>();
-        List<List<StateFeatureReqDTO>> combinedFeatures = new ArrayList<>();
+        List<StateFeatureReqDTO> combinedFeatures = new ArrayList<>();
         List<StateDistrictResDTO> result = new ArrayList<>();
-
-        StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
-        stateDistrictResDTO.setId(districtPlan.get(0).getId());
-        stateDistrictResDTO.setType(districtPlan.get(0).getType());
-        stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
 
         if (state.equalsIgnoreCase("AL")) {
             int count = 0;
             while (count < districtPlan.size()) {
+                StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
+                stateDistrictResDTO.setId(districtPlan.get(0).getId());
+                stateDistrictResDTO.setType(districtPlan.get(0).getType());
+                stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
                 for (int i = 0; i < 2; i++) {
-                    features.add(districtPlan.get(count + i).getFeatures().get(0));
+                    combinedFeatures.add(districtPlan.get(count + i).getFeatures().get(0));
                 }
-                combinedFeatures.add(new ArrayList<>(features));
-                features.clear();
+                stateDistrictResDTO.setFeatures(new ArrayList<>(combinedFeatures));
+                combinedFeatures.clear();
                 count += 2;
+                result.add(stateDistrictResDTO);
             }
-            stateDistrictResDTO.setFeatures(combinedFeatures);
-            result.add(stateDistrictResDTO);
         } else if (state.equalsIgnoreCase("MS")) {
             int count = 0;
             while (count < districtPlan.size()) {
+                StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
+                stateDistrictResDTO.setId(districtPlan.get(0).getId());
+                stateDistrictResDTO.setType(districtPlan.get(0).getType());
+                stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
                 for (int i = 0; i < 1; i++) {
-                    features.add(districtPlan.get(count + i).getFeatures().get(0));
+                    combinedFeatures.add(districtPlan.get(count + i).getFeatures().get(0));
                 }
-                combinedFeatures.add(new ArrayList<>(features));
-                features.clear();
+                stateDistrictResDTO.setFeatures(new ArrayList<>(combinedFeatures));
+                combinedFeatures.clear();
                 count += 1;
+                result.add(stateDistrictResDTO);
             }
-            stateDistrictResDTO.setFeatures(combinedFeatures);
-            result.add(stateDistrictResDTO);
         } else if (state.equalsIgnoreCase("PA")) {
             int count = 0;
             while (count < districtPlan.size()) {
+                StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
+                stateDistrictResDTO.setId(districtPlan.get(0).getId());
+                stateDistrictResDTO.setType(districtPlan.get(0).getType());
+                stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
                 for (int i = 0; i < 4; i++) {
-                    features.add(districtPlan.get(count + i).getFeatures().get(0));
+                    combinedFeatures.add(districtPlan.get(count + i).getFeatures().get(0));
                 }
-                combinedFeatures.add(new ArrayList<>(features));
-                features.clear();
+                stateDistrictResDTO.setFeatures(new ArrayList<>(combinedFeatures));
+                combinedFeatures.clear();
                 count += 4;
+                result.add(stateDistrictResDTO);
             }
-            stateDistrictResDTO.setFeatures(combinedFeatures);
-            result.add(stateDistrictResDTO);
         }
         return result;
     }
 
     public List<StateDistrictResDTO> findAllSMDForOneState(String state) {
-
         List<StateDistrictReqDTO> districtPlan = stateDistrictRepository.findByDistrictIdStartingWithAndEndingWithNumber(state);
 
-        List<StateFeatureReqDTO> features = new ArrayList<>();
-        List<List<StateFeatureReqDTO>> combinedFeatures = new ArrayList<>();
+        List<StateFeatureReqDTO> combinedFeatures = new ArrayList<>();
         List<StateDistrictResDTO> result = new ArrayList<>();
-
-        StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
-        stateDistrictResDTO.setId(districtPlan.get(0).getId());
-        stateDistrictResDTO.setType(districtPlan.get(0).getType());
-        stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
 
         if (state.equalsIgnoreCase("AL")) {
             int count = 0;
             while (count < districtPlan.size()) {
+                StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
+                stateDistrictResDTO.setId(districtPlan.get(0).getId());
+                stateDistrictResDTO.setType(districtPlan.get(0).getType());
+                stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
                 for (int i = 0; i < 7; i++) {
-                    features.add(districtPlan.get(count + i).getFeatures().get(0));
+                    combinedFeatures.add(districtPlan.get(count + i).getFeatures().get(0));
                 }
-                combinedFeatures.add(new ArrayList<>(features));
-                features.clear();
+                stateDistrictResDTO.setFeatures(new ArrayList<>(combinedFeatures));
+                combinedFeatures.clear();
                 count += 7;
+                result.add(stateDistrictResDTO);
             }
-            stateDistrictResDTO.setFeatures(combinedFeatures);
-            result.add(stateDistrictResDTO);
         } else if (state.equalsIgnoreCase("MS")) {
             int count = 0;
             while (count < districtPlan.size()) {
+                StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
+                stateDistrictResDTO.setId(districtPlan.get(0).getId());
+                stateDistrictResDTO.setType(districtPlan.get(0).getType());
+                stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
                 for (int i = 0; i < 4; i++) {
-                    features.add(districtPlan.get(count + i).getFeatures().get(0));
+                    combinedFeatures.add(districtPlan.get(count + i).getFeatures().get(0));
                 }
-                combinedFeatures.add(new ArrayList<>(features));
-                features.clear();
+                stateDistrictResDTO.setFeatures(new ArrayList<>(combinedFeatures));
+                combinedFeatures.clear();
                 count += 4;
+                result.add(stateDistrictResDTO);
             }
-            stateDistrictResDTO.setFeatures(combinedFeatures);
-            result.add(stateDistrictResDTO);
         } else if (state.equalsIgnoreCase("PA")) {
             int count = 0;
             while (count < districtPlan.size()) {
+                StateDistrictResDTO stateDistrictResDTO = new StateDistrictResDTO();
+                stateDistrictResDTO.setId(districtPlan.get(0).getId());
+                stateDistrictResDTO.setType(districtPlan.get(0).getType());
+                stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
                 for (int i = 0; i < 18; i++) {
-                    features.add(districtPlan.get(count + i).getFeatures().get(0));
+                    combinedFeatures.add(districtPlan.get(count + i).getFeatures().get(0));
                 }
-                combinedFeatures.add(new ArrayList<>(features));
-                features.clear();
+                stateDistrictResDTO.setFeatures(new ArrayList<>(combinedFeatures));
+                combinedFeatures.clear();
                 count += 18;
+                result.add(stateDistrictResDTO);
             }
-            stateDistrictResDTO.setFeatures(combinedFeatures);
-            result.add(stateDistrictResDTO);
         }
         return result;
     }
