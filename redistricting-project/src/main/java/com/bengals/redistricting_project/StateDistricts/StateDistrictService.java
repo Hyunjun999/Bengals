@@ -34,7 +34,6 @@ public class StateDistrictService {
                 stateDistrictResDTO.setId(districtPlan.get(0).getId());
                 stateDistrictResDTO.setType(districtPlan.get(0).getType());
                 stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
-                stateDistrictResDTO.setDistrict_id(districtPlanStats.get(statCount).getDistrict_id());
                 stateDistrictResDTO.setState(districtPlanStats.get(statCount).getState());
                 stateDistrictResDTO.setDis_type(districtPlanStats.get(statCount).getDis_type());
                 stateDistrictResDTO.setOp_districts(districtPlanStats.get(statCount).getOp_districts());
@@ -59,7 +58,6 @@ public class StateDistrictService {
                 stateDistrictResDTO.setId(districtPlan.get(0).getId());
                 stateDistrictResDTO.setType(districtPlan.get(0).getType());
                 stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
-                stateDistrictResDTO.setDistrict_id(districtPlanStats.get(statCount).getDistrict_id());
                 stateDistrictResDTO.setState(districtPlanStats.get(statCount).getState());
                 stateDistrictResDTO.setDis_type(districtPlanStats.get(statCount).getDis_type());
                 stateDistrictResDTO.setOp_districts(districtPlanStats.get(statCount).getOp_districts());
@@ -84,7 +82,6 @@ public class StateDistrictService {
                 stateDistrictResDTO.setId(districtPlan.get(0).getId());
                 stateDistrictResDTO.setType(districtPlan.get(0).getType());
                 stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
-                stateDistrictResDTO.setDistrict_id(districtPlanStats.get(statCount).getDistrict_id());
                 stateDistrictResDTO.setState(districtPlanStats.get(statCount).getState());
                 stateDistrictResDTO.setDis_type(districtPlanStats.get(statCount).getDis_type());
                 stateDistrictResDTO.setOp_districts(districtPlanStats.get(statCount).getOp_districts());
@@ -120,7 +117,6 @@ public class StateDistrictService {
                 stateDistrictResDTO.setId(districtPlan.get(0).getId());
                 stateDistrictResDTO.setType(districtPlan.get(0).getType());
                 stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
-                stateDistrictResDTO.setDistrict_id(districtPlanStats.get(statCount).getDistrict_id());
                 stateDistrictResDTO.setState(districtPlanStats.get(statCount).getState());
                 stateDistrictResDTO.setDis_type(districtPlanStats.get(statCount).getDis_type());
                 stateDistrictResDTO.setOp_districts(districtPlanStats.get(statCount).getOp_districts());
@@ -145,7 +141,6 @@ public class StateDistrictService {
                 stateDistrictResDTO.setId(districtPlan.get(0).getId());
                 stateDistrictResDTO.setType(districtPlan.get(0).getType());
                 stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
-                stateDistrictResDTO.setDistrict_id(districtPlanStats.get(statCount).getDistrict_id());
                 stateDistrictResDTO.setState(districtPlanStats.get(statCount).getState());
                 stateDistrictResDTO.setDis_type(districtPlanStats.get(statCount).getDis_type());
                 stateDistrictResDTO.setOp_districts(districtPlanStats.get(statCount).getOp_districts());
@@ -170,7 +165,6 @@ public class StateDistrictService {
                 stateDistrictResDTO.setId(districtPlan.get(0).getId());
                 stateDistrictResDTO.setType(districtPlan.get(0).getType());
                 stateDistrictResDTO.setCrs(districtPlan.get(0).getCrs());
-                stateDistrictResDTO.setDistrict_id(districtPlanStats.get(statCount).getDistrict_id());
                 stateDistrictResDTO.setState(districtPlanStats.get(statCount).getState());
                 stateDistrictResDTO.setDis_type(districtPlanStats.get(statCount).getDis_type());
                 stateDistrictResDTO.setOp_districts(districtPlanStats.get(statCount).getOp_districts());

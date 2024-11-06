@@ -19,7 +19,6 @@ public class StateDistrictResDTO {
     private ObjectId id;
     private String type;
     private StateCrs crs;
-    private String district_id;
     private String state;
     private String dis_type;
     @JsonProperty("Republicans")
