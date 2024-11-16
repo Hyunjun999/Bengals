@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -13,5 +12,5 @@ import java.util.List;
 @Builder
 public class Geometry {
     private String type;
-    private List<List<List<Double>>> coordinates;
+    private Object coordinates;
 }

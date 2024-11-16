@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../CSE 332/Lab/Lab3/Lab3 Submission/lab3-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../CSE 332/Lab/Lab3/lab3-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../CSE 332/Lab/Lab4/Lab 4 Submission/lab4-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../CSE 332/Lab/Lab4/lab3-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../CSE 332/Lab/Lab4/lab4-app" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
