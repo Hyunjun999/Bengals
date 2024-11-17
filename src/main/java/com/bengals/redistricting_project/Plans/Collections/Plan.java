@@ -1,6 +1,7 @@
 package com.bengals.redistricting_project.Plans.Collections;
 
 import com.bengals.redistricting_project.Ensembles.Collections.MMD;
+import com.bengals.redistricting_project.Ensembles.Collections.PartySplit;
 import com.bengals.redistricting_project.Ensembles.Collections.SMD;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +28,13 @@ public class Plan {
     private int democratic;
     private int num_op_districts;
     private int num_safe_districts;
+    private double non_white_ratio;
+    private double white_ratio;
     private double op_threshold;
     private String reason;
     private List<Feature> features;
+    private List<PartySplit> seats_votes;
+    private double bias;
+    private double symmetry;
+    private PartySplit responsiveness;
 }

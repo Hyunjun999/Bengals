@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Party {
-private PartyBoxWhisker party_box_whisker;
-private List<PartySplits> party_splits;
+    private PartyBoxWhisker party_box_whisker;
+    private List<PartySplits> party_splits;
+    private PartySplit avg_seat_share;
 }

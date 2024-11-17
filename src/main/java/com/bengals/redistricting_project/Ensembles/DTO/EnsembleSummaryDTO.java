@@ -21,6 +21,7 @@ public class EnsembleSummaryDTO {
     private double bias;
     private double symmetry;
     private PartySplit responsiveness;
+    private PartySplit avg_seat_share;
 
     public static EnsembleSummaryDTO toEnsembleSummaryDTO(Ensemble ensemble, String districtType) { //Entity -> DTO
         EnsembleSummaryDTOBuilder ensembleSummaryDTOBuilder = EnsembleSummaryDTO.builder();
