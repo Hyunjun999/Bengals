@@ -1,6 +1,5 @@
-package com.bengals.redistricting_project.Plans.Repository;
+package com.bengals.redistricting_project.Plans;
 
-import com.bengals.redistricting_project.Ensembles.Collections.Ensemble;
 import com.bengals.redistricting_project.Plans.Collections.Plan;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;

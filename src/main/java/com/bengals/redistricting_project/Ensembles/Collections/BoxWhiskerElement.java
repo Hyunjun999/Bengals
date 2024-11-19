@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class BoxWhiskerElement {
+    private int name;
     private double min;
     private double lowerQuartile;
     private double median;
@@ -17,6 +18,4 @@ public class BoxWhiskerElement {
     private double max;
     private double average;
     private double enacted;
-    private int name;
-
 }

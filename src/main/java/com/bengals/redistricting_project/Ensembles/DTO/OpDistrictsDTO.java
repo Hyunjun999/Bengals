@@ -14,6 +14,7 @@ import java.util.List;
 
 public class OpDistrictsDTO {
     List<OpDistrictsElementDTO> blk;
+    List<OpDistrictsElementDTO> asn;
     List<OpDistrictsElementDTO> hsp;
     List<OpDistrictsElementDTO> non_wht;
 }

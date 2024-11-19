@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class RacialPop {
     private int blk;
-    private int hisp;
+    private int hsp;
     private int asn;
 }

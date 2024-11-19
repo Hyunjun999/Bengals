@@ -14,6 +14,7 @@ import java.util.List;
 @Builder
 public class OpRepresentativesDTO {
     private List<OpRepresentativesElementDTO> blk;
+    private List<OpRepresentativesElementDTO> asn;
     private List<OpRepresentativesElementDTO> hsp;
     private List<OpRepresentativesElementDTO> non_wht;
 }

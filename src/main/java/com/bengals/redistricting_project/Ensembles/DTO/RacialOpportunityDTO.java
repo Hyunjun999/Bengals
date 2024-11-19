@@ -26,6 +26,7 @@ public class RacialOpportunityDTO {
         }
         OpDistrictsDTO.OpDistrictsDTOBuilder opDistrictsDTOBuilder = OpDistrictsDTO.builder();
         opDistrictsDTOBuilder.blk(opPerRace("blk", opDistricts));
+        opDistrictsDTOBuilder.asn(opPerRace("asn", opDistricts));
         opDistrictsDTOBuilder.hsp(opPerRace("hsp", opDistricts));
         opDistrictsDTOBuilder.non_wht(opPerRace("non_wht", opDistricts));
 
@@ -37,6 +38,7 @@ public class RacialOpportunityDTO {
         }
         OpRepresentativesDTO.OpRepresentativesDTOBuilder opRepresentativesDTOBuilder = OpRepresentativesDTO.builder();
         opRepresentativesDTOBuilder.blk(repPerRace("blk", opRepresentatives));
+        opRepresentativesDTOBuilder.asn(repPerRace("asn", opRepresentatives));
         opRepresentativesDTOBuilder.hsp(repPerRace("hsp", opRepresentatives));
         opRepresentativesDTOBuilder.non_wht(repPerRace("non_wht", opRepresentatives));
 
@@ -51,6 +53,8 @@ public class RacialOpportunityDTO {
         Map<Integer, Integer> map = new HashMap<>();
         if (race.equalsIgnoreCase("blk")) {
             raceSelected = opRepresentatives.getBlk();
+        } else if (race.equalsIgnoreCase("asn")) {
+            raceSelected = opRepresentatives.getAsn();
         } else if (race.equalsIgnoreCase("hsp")) {
             raceSelected = opRepresentatives.getHsp();
         } else if (race.equalsIgnoreCase("non_wht")) {
@@ -80,6 +84,8 @@ public class RacialOpportunityDTO {
         Map<Integer, Integer> map = new HashMap<>();
         if (race.equalsIgnoreCase("blk")) {
             raceSelected = opDistricts.getBlk();
+        } else if (race.equalsIgnoreCase("asn")) {
+            raceSelected = opDistricts.getAsn();
         } else if (race.equalsIgnoreCase("hsp")) {
             raceSelected = opDistricts.getHsp();
         } else if (race.equalsIgnoreCase("non_wht")) {

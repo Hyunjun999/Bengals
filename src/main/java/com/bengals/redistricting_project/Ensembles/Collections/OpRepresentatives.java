@@ -13,6 +13,7 @@ import java.util.List;
 @Builder
 public class OpRepresentatives {
     private List<OpRepresentativesElement> blk;
+    private List<OpRepresentativesElement> asn;
     private List<OpRepresentativesElement> hsp;
     private List<OpRepresentativesElement> non_wht;
 }

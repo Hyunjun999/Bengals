@@ -1,5 +1,8 @@
 package com.bengals.redistricting_project.Ensembles;
 
+import com.bengals.redistricting_project.Ensembles.Collections.PartyBoxWhisker;
+import com.bengals.redistricting_project.Ensembles.Collections.RacialBoxWhisker;
+import com.bengals.redistricting_project.Ensembles.Collections.Summary;
 import com.bengals.redistricting_project.Ensembles.DTO.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,12 +17,12 @@ public class EnsembleController {
     }
 
     @GetMapping("/{state}/ensembleSummary/{districtType}")
-    public EnsembleSummaryDTO getEnsembleSummary(@PathVariable String state, @PathVariable String districtType) {
+    public Summary getEnsembleSummary(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getEnsembleSummary(state, districtType.toLowerCase());
     }
 
     @GetMapping("/{state}/racialDistribution/{districtType}")
-    public RacialBoxWhiskerDTO getRacialDistribution(@PathVariable String state, @PathVariable String districtType) {
+    public RacialBoxWhisker getRacialDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getRacialDistribution(state, districtType.toLowerCase());
     }
 
@@ -27,10 +30,12 @@ public class EnsembleController {
     public RacialOpportunityDTO getRacialOpportunity(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getRacialOpportunity(state, districtType.toLowerCase());
     }
+
     @GetMapping("/{state}/partyPopDistribution/{districtType}")
-    public PartyPopDistributionDTO getPartyPopDistribution(@PathVariable String state, @PathVariable String districtType) {
+    public PartyBoxWhisker getPartyPopDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getPartyPopDistribution(state, districtType.toLowerCase());
     }
+
     @GetMapping("/{state}/partySplitDistribution/{districtType}")
     public PartySplitDistributionDTO getPartySplitDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getPartySplitDistribution(state, districtType.toLowerCase());
@@ -38,7 +43,6 @@ public class EnsembleController {
 
     @GetMapping("/{state}/planComparison")
     public EnactedAvgDTO getComparisonEnactedAvg(@PathVariable String state) {
-        System.out.println(ensembleService.getComparisonEnactedAvg(state));
         return ensembleService.getComparisonEnactedAvg(state);
     }
 }

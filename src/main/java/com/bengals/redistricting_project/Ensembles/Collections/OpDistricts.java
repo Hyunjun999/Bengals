@@ -13,6 +13,7 @@ import java.util.List;
 @Builder
 public class OpDistricts {
     private List<OpDistrictsElement> blk;
+    private List<OpDistrictsElement> asn;
     private List<OpDistrictsElement> hsp;
     private List<OpDistrictsElement> non_wht;
 }

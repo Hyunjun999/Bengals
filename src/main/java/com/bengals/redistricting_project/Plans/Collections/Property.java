@@ -19,6 +19,7 @@ public class Property {
     private int vote_dem;
     private int vote_rep;
     private String win_pty;
+    private String win_pty_votes;
     private double op_threshold;
     private String centroid;
 }

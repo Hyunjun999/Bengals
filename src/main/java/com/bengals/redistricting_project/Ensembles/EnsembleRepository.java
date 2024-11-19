@@ -1,4 +1,4 @@
-package com.bengals.redistricting_project.Ensembles.Repository;
+package com.bengals.redistricting_project.Ensembles;
 
 import com.bengals.redistricting_project.Ensembles.Collections.Ensemble;
 import org.bson.types.ObjectId;
