@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PartySplits {
+public class PartySplitForBar {
     private int name;
     private int republican;
     private int democratic;

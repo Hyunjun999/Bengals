@@ -1,5 +1,6 @@
 package com.bengals.redistricting_project.Ensembles;
 
+import com.bengals.redistricting_project.Ensembles.Collections.EnactedAvg;
 import com.bengals.redistricting_project.Ensembles.Collections.PartyBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.RacialBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.Summary;
@@ -37,8 +38,8 @@ public class EnsembleService {
         return PartySplitDistributionDTO.toPartySplitDistributionDTO(ensembleRepository.findByState(state), districtType);
     }
 
-    public EnactedAvgDTO getComparisonEnactedAvg(String state) {
-        return EnactedAvgDTO.toEnactedAvgDTO(ensembleRepository.findByState(state));
+    public EnactedAvg getComparisonEnactedAvg(String state) {
+        return ensembleRepository.findByState(state).getMmd().getEnacted_vs_avg();
     }
 
 }

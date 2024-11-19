@@ -1,5 +1,6 @@
 package com.bengals.redistricting_project.Ensembles;
 
+import com.bengals.redistricting_project.Ensembles.Collections.EnactedAvg;
 import com.bengals.redistricting_project.Ensembles.Collections.PartyBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.RacialBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.Summary;
@@ -42,7 +43,7 @@ public class EnsembleController {
     }
 
     @GetMapping("/{state}/planComparison")
-    public EnactedAvgDTO getComparisonEnactedAvg(@PathVariable String state) {
+    public EnactedAvg getComparisonEnactedAvg(@PathVariable String state) {
         return ensembleService.getComparisonEnactedAvg(state);
     }
 }
