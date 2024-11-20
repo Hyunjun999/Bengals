@@ -1,8 +1,14 @@
 package com.bengals.redistricting_project.Plans;
 
+import com.bengals.redistricting_project.Plans.Collections.Feature;
 import com.bengals.redistricting_project.Plans.Collections.Plan;
+import com.bengals.redistricting_project.Plans.Collections.Property;
 import com.bengals.redistricting_project.Plans.Collections.SampleMap;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class PlanService {
@@ -16,7 +22,24 @@ public class PlanService {
     }
 
     public Plan getPlan(String state, String reason, String districtType) {
-        return planRepository.findBy(state, reason, districtType).get(0);
+        Plan plan = planRepository.findBy(state, reason, districtType).get(0);
+        List<Feature> features = plan.getFeatures();
+        List<Feature> featuresDTO = new ArrayList<>();
+        String partyWithVotes = "";
+        for (Feature feature : features) {
+            Property property = feature.getProperties();
+            String[] winningParty = property.getWin_pty().split(",");
+            String[] winningVotes = property.getWin_pty_votes().split(",");
+            for (int i = 0; i < winningParty.length; i++) {
+                String sub = winningParty[i] + "(" + winningVotes[i] + "), ";
+                partyWithVotes = partyWithVotes + sub;
+            }
+            partyWithVotes = partyWithVotes.substring(0, partyWithVotes.length() - 2);
+            property.setWin_pty(partyWithVotes);
+            featuresDTO.add(feature);
+        }
+        plan.setFeatures(featuresDTO);
+        return plan;
     }
 
     public SampleMap getSampleMMDMap(String state) {
