@@ -43,4 +43,5 @@ public class Plan {
     private double bias;
     private double symmetry;
     private PartySplit responsiveness;
+
 }

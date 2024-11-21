@@ -20,4 +20,5 @@ public class Summary {
     private double bias;
     private double symmetry;
     private PartySplit responsiveness;
+    private List<Integer> layout;
 }
