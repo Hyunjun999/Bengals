@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class Property {
     private int total_pop;
     private int vote_pop;
+    private int total_wht;
     private int total_asn;
     private int total_blk;
     private int total_hsp;
@@ -21,6 +22,7 @@ public class Property {
     private String win_pty_votes;
     private double op_threshold;
     private String centroid;
+
     public String getWin_pty_votes() {
         return win_pty_votes == null ? "" : win_pty_votes;
     }

@@ -26,10 +26,10 @@ public class Plan {
     private String district_type;
     private int total_pop;
     private int vote_pop;
+    private int total_wht;
     private int total_asn;
     private int total_blk;
     private int total_hsp;
-    private int total_wht;
     private double non_white_ratio;
     private double white_ratio;
     private int republican;
