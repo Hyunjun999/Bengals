@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 public class Feature {
     private String type;
     private String district_id;
-    private int num_dist;
     private Property properties;
     private Geometry geometry;
 }
