@@ -28,8 +28,6 @@ public class PlanService {
         else if(reason.equals("opportunity-max")) shortenedReason = "op_max";
         else if(reason.equals("white-max")) shortenedReason = "wht_prob_max";
         else if(reason.equals("non-white-max")) shortenedReason = "non_wht_prob_max";
-        System.out.println(shortenedReason);
-        System.out.println(planRepository.findBy(state, shortenedReason, districtType));
         Plan plan = planRepository.findBy(state, shortenedReason, districtType).get(0);
         if (districtType.equalsIgnoreCase("mmd")) {
             List<Feature> features = plan.getFeatures();
@@ -38,10 +36,10 @@ public class PlanService {
             for (Feature feature : features) {
                 Property property = feature.getProperties();
                 String[] winningParty = property.getWinningParty().split(",");
-                String[] winningVotes = property.getWinningPartywithVotes().split(",");
+                String[] winningVotes = property.getWinningPartyVotes().split(",");
                 for (int i = 0; i < winningParty.length; i++) {
-                    String sub = winningParty[i] + "(" + winningVotes[i] + "), ";
-                    partyWithVotes = partyWithVotes + sub;
+                    String votes = winningParty[i] + "(" + winningVotes[i] + "), ";
+                    partyWithVotes = partyWithVotes + votes;
                 }
                 partyWithVotes = partyWithVotes.substring(0, partyWithVotes.length() - 2);
                 property.setWinningParty(partyWithVotes);

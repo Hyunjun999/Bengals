@@ -23,7 +23,4 @@ public class Property {
     private String winningPartyVotes;
     private double opportunityThreshold;
     private String centroid;
-    public String getWinningPartywithVotes() {
-        return winningPartyVotes == null ? "" : winningPartyVotes;
-    }
 }
