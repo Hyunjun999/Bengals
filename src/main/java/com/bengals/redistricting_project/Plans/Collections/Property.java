@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Property {
-    private int numDistrict;
+    private int districtNumber;
     private int totalPopulation;
     private int votePopulation;
     private int totalWhite;

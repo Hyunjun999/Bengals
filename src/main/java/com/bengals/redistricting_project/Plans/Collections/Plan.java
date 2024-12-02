@@ -28,8 +28,8 @@ public class Plan {
     private int totalAsian;
     private int totalBlack;
     private int totalHispanic;
-    private double nonWhiteRatio;
-    private double whiteRatio;
+    private double nonWhiteProbability;
+    private double whiteProbability;
     private int republican;
     private int democratic;
     private int numOpportunityDistricts;

@@ -17,32 +17,32 @@ public class EnsembleController {
         this.ensembleService = ensembleService;
     }
 
-    @GetMapping("/{state}/ensembleSummary/{districtType}")
+    @GetMapping("/{state}/ensemble-summary/{districtType}")
     public Summary getEnsembleSummary(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getEnsembleSummary(state, districtType);
     }
 
-    @GetMapping("/{state}/racialDistribution/{districtType}")
+    @GetMapping("/{state}/racial-distribution/{districtType}")
     public RacialBoxWhisker getRacialDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getRacialDistribution(state, districtType);
     }
 
-    @GetMapping("/{state}/opDistribution/{districtType}")
+    @GetMapping("/{state}/opportunity-distribution/{districtType}")
     public RacialOpportunityDto getOpportunityDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getOpportunityDistribution(state, districtType);
     }
 
-    @GetMapping("/{state}/partyPopDistribution/{districtType}")
+    @GetMapping("/{state}/party-population-distribution/{districtType}")
     public PartyBoxWhisker getPartyPopulationDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getPartyPopulationDistribution(state, districtType);
     }
 
-    @GetMapping("/{state}/partySplitDistribution/{districtType}")
+    @GetMapping("/{state}/party-split-distribution/{districtType}")
     public PartySplitDistributionDto getPartySplitDistribution(@PathVariable String state, @PathVariable String districtType) {
         return ensembleService.getPartySplitDistribution(state, districtType);
     }
 
-    @GetMapping("/{state}/planComparison")
+    @GetMapping("/{state}/plan-comparison")
     public EnactedAverage getComparisonEnactedAvg(@PathVariable String state) {
         return ensembleService.getComparisonEnactedAvg(state);
     }

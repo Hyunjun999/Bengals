@@ -13,7 +13,7 @@ import java.util.List;
 public interface PlanRepository extends MongoRepository<Plan, ObjectId> {
     public Plan findByState(String state);
 
-    @Query("{ 'state': ?0, 'reason': ?1, 'district_type': ?2 }")
+    @Query("{ 'state': ?0, 'reason': ?1, 'districtType': ?2 }")
     List<Plan> findBy(String state, String reason, String districtType);
 
 

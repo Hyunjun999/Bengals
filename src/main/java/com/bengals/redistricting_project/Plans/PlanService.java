@@ -22,25 +22,33 @@ public class PlanService {
     }
 
     public Plan getPlan(String state, String reason, String districtType) {
-        Plan plan = planRepository.findBy(state, reason, districtType).get(0);
-        if (districtType.equalsIgnoreCase("mmd")) {
-            List<Feature> features = plan.getFeatures();
-            List<Feature> featuresDTO = new ArrayList<>();
-            String partyWithVotes = "";
-            for (Feature feature : features) {
-                Property property = feature.getProperties();
-                String[] winningParty = property.getWinningParty().split(",");
-                String[] winningVotes = property.getWinningPartywithVotes().split(",");
-                for (int i = 0; i < winningParty.length; i++) {
-                    String sub = winningParty[i] + "(" + winningVotes[i] + "), ";
-                    partyWithVotes = partyWithVotes + sub;
-                }
-                partyWithVotes = partyWithVotes.substring(0, partyWithVotes.length() - 2);
-                property.setWinningParty(partyWithVotes);
-                featuresDTO.add(feature);
-            }
-            plan.setFeatures(featuresDTO);
-        }
+        String shortenedReason = "";
+        if(reason.equals("republican")) shortenedReason = "rep";
+        else if(reason.equals("democratic")) shortenedReason = "dem";
+        else if(reason.equals("opportunity-max")) shortenedReason = "op_max";
+        else if(reason.equals("white-max")) shortenedReason = "wht_prob_max";
+        else if(reason.equals("non-white-max")) shortenedReason = "non_wht_prob_max";
+        System.out.println(shortenedReason);
+        System.out.println(planRepository.findBy(state, shortenedReason, districtType));
+        Plan plan = planRepository.findBy(state, shortenedReason, districtType).get(0);
+//        if (districtType.equalsIgnoreCase("mmd")) {
+//            List<Feature> features = plan.getFeatures();
+//            List<Feature> featuresDTO = new ArrayList<>();
+//            String partyWithVotes = "";
+//            for (Feature feature : features) {
+//                Property property = feature.getProperties();
+//                String[] winningParty = property.getWinningParty().split(",");
+//                String[] winningVotes = property.getWinningPartywithVotes().split(",");
+//                for (int i = 0; i < winningParty.length; i++) {
+//                    String sub = winningParty[i] + "(" + winningVotes[i] + "), ";
+//                    partyWithVotes = partyWithVotes + sub;
+//                }
+//                partyWithVotes = partyWithVotes.substring(0, partyWithVotes.length() - 2);
+//                property.setWinningParty(partyWithVotes);
+//                featuresDTO.add(feature);
+//            }
+//            plan.setFeatures(featuresDTO);
+//        }
         return plan;
     }
 

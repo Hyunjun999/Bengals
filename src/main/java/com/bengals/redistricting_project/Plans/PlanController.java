@@ -14,17 +14,17 @@ public class PlanController {
         this.planService = planService;
     }
 
-    @GetMapping("/{state}/randomPlan/{reason}/{districtType}")
+    @GetMapping("/{state}/random-plan/{reason}/{districtType}")
     public Plan getPlan(@PathVariable String state, @PathVariable String reason, @PathVariable String districtType) {
         return planService.getPlan(state, reason, districtType.toLowerCase());
     }
 
-    @GetMapping("/{state}/sampleMMDMap")
+    @GetMapping("/{state}/sample-mmd-map")
     public SampleMap getSampleMMDMap(@PathVariable String state) {
         return planService.getSampleMMDMap(state);
     }
 
-    @GetMapping("/{state}/enactedMap")
+    @GetMapping("/{state}/enacted-map")
     public SampleMap getEnactedMap(@PathVariable String state) {
         return planService.getEnactedMap(state);
     }
