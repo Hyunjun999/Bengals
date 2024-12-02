@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface SampleMapRepository extends MongoRepository<SampleMap, ObjectId> {
-    @Query("{ 'state': ?0, 'district_type': ?1 }")
+    @Query("{ 'state': ?0, 'districtType': ?1 }")
     SampleMap findBy(String state, String districtType);
 }

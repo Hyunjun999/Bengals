@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PlanService {
@@ -22,12 +23,14 @@ public class PlanService {
     }
 
     public Plan getPlan(String state, String reason, String districtType) {
-        String shortenedReason = "";
-        if(reason.equals("republican")) shortenedReason = "rep";
-        else if(reason.equals("democratic")) shortenedReason = "dem";
-        else if(reason.equals("opportunity-max")) shortenedReason = "op_max";
-        else if(reason.equals("white-max")) shortenedReason = "wht_prob_max";
-        else if(reason.equals("non-white-max")) shortenedReason = "non_wht_prob_max";
+        Map<String, String> reasonMap = Map.of(
+                "republican", "rep",
+                "democratic", "dem",
+                "opportunity-max", "op_max",
+                "white-max", "wht_prob_max",
+                "non-white-max", "non_wht_prob_max"
+        );
+        String shortenedReason = reasonMap.getOrDefault(reason, reason);
         Plan plan = planRepository.findBy(state, shortenedReason, districtType).get(0);
         if (districtType.equalsIgnoreCase("mmd")) {
             List<Feature> features = plan.getFeatures();
@@ -51,6 +54,7 @@ public class PlanService {
     }
 
     public SampleMap getSampleMMDMap(String state) {
+        System.out.println(sampleMapRepository.findBy(state, "mmd"));
         return sampleMapRepository.findBy(state, "mmd");
     }
 
