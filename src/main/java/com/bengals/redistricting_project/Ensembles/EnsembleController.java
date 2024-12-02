@@ -28,13 +28,13 @@ public class EnsembleController {
     }
 
     @GetMapping("/{state}/opDistribution/{districtType}")
-    public RacialOpportunityDto getRacialOpportunity(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getRacialOpportunity(state, districtType);
+    public RacialOpportunityDto getOpportunityDistribution(@PathVariable String state, @PathVariable String districtType) {
+        return ensembleService.getOpportunityDistribution(state, districtType);
     }
 
     @GetMapping("/{state}/partyPopDistribution/{districtType}")
-    public PartyBoxWhisker getPartyPopDistribution(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getPartyPopDistribution(state, districtType);
+    public PartyBoxWhisker getPartyPopulationDistribution(@PathVariable String state, @PathVariable String districtType) {
+        return ensembleService.getPartyPopulationDistribution(state, districtType);
     }
 
     @GetMapping("/{state}/partySplitDistribution/{districtType}")

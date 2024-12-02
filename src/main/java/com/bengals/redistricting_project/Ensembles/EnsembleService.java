@@ -25,11 +25,11 @@ public class EnsembleService {
         else return ensembleRepository.findByState(state).getMmd().getRacial().getRacialBoxWhisker();
     }
 
-    public RacialOpportunityDto getRacialOpportunity(String state, String districtType) {
+    public RacialOpportunityDto getOpportunityDistribution(String state, String districtType) {
         return RacialOpportunityDto.toRacialOpportunityDTO(ensembleRepository.findByState(state), districtType);
     }
 
-    public PartyBoxWhisker getPartyPopDistribution(String state, String districtType) {
+    public PartyBoxWhisker getPartyPopulationDistribution(String state, String districtType) {
         if (districtType.equalsIgnoreCase("smd")) return ensembleRepository.findByState(state).getSmd().getParty().getPartyBoxWhisker();
         else return ensembleRepository.findByState(state).getMmd().getParty().getPartyBoxWhisker();
     }
