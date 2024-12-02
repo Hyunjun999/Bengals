@@ -17,8 +17,8 @@ public class Property {
     private int totalAsian;
     private int totalBlack;
     private int totalHispanic;
-    private int DemocraticVotes;
-    private int RepublicanVotes;
+    private int democraticVotes;
+    private int republicanVotes;
     private String winningParty;
     private String winningPartyVotes;
     private double opportunityThreshold;
