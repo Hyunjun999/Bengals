@@ -10,20 +10,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Property {
-    private int num_dist;
-    private int total_pop;
-    private int vote_pop;
-    private int total_wht;
-    private int total_asn;
-    private int total_blk;
-    private int total_hsp;
-    private int vote_dem;
-    private int vote_rep;
-    private String win_pty;
-    private String win_pty_votes;
-    private double op_threshold;
+    private int numDist;
+    private int totalPop;
+    private int votePop;
+    private int total_Wht;
+    private int totalAsn;
+    private int totalBlk;
+    private int totalHsp;
+    private int voteDem;
+    private int voteRep;
+    private String winPty;
+    private String winPtyVotes;
+    private double opThreshold;
     private String centroid;
     public String getWin_pty_votes() {
-        return win_pty_votes == null ? "" : win_pty_votes;
+        return winPtyVotes == null ? "" : winPtyVotes;
     }
 }

@@ -1,6 +1,6 @@
 package com.bengals.redistricting_project.Ensembles;
 
-import com.bengals.redistricting_project.Ensembles.Collections.EnactedAvg;
+import com.bengals.redistricting_project.Ensembles.Collections.EnactedAverage;
 import com.bengals.redistricting_project.Ensembles.Collections.PartyBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.RacialBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.Summary;
@@ -19,31 +19,31 @@ public class EnsembleController {
 
     @GetMapping("/{state}/ensembleSummary/{districtType}")
     public Summary getEnsembleSummary(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getEnsembleSummary(state, districtType.toLowerCase());
+        return ensembleService.getEnsembleSummary(state, districtType);
     }
 
     @GetMapping("/{state}/racialDistribution/{districtType}")
     public RacialBoxWhisker getRacialDistribution(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getRacialDistribution(state, districtType.toLowerCase());
+        return ensembleService.getRacialDistribution(state, districtType);
     }
 
     @GetMapping("/{state}/opDistribution/{districtType}")
-    public RacialOpportunityDTO getRacialOpportunity(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getRacialOpportunity(state, districtType.toLowerCase());
+    public RacialOpportunityDto getRacialOpportunity(@PathVariable String state, @PathVariable String districtType) {
+        return ensembleService.getRacialOpportunity(state, districtType);
     }
 
     @GetMapping("/{state}/partyPopDistribution/{districtType}")
     public PartyBoxWhisker getPartyPopDistribution(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getPartyPopDistribution(state, districtType.toLowerCase());
+        return ensembleService.getPartyPopDistribution(state, districtType);
     }
 
     @GetMapping("/{state}/partySplitDistribution/{districtType}")
-    public PartySplitDistributionDTO getPartySplitDistribution(@PathVariable String state, @PathVariable String districtType) {
-        return ensembleService.getPartySplitDistribution(state, districtType.toLowerCase());
+    public PartySplitDistributionDto getPartySplitDistribution(@PathVariable String state, @PathVariable String districtType) {
+        return ensembleService.getPartySplitDistribution(state, districtType);
     }
 
     @GetMapping("/{state}/planComparison")
-    public EnactedAvg getComparisonEnactedAvg(@PathVariable String state) {
+    public EnactedAverage getComparisonEnactedAvg(@PathVariable String state) {
         return ensembleService.getComparisonEnactedAvg(state);
     }
 }

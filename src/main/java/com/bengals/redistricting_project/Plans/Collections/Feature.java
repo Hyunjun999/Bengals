@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Feature {
     private String type;
-    private String district_id;
+    private String districtId;
     private Property properties;
     private Geometry geometry;
 }

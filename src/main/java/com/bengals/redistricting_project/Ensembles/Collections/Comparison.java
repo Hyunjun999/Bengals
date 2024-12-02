@@ -14,6 +14,6 @@ import java.util.List;
 public class Comparison {
     private double republican;
     private double democratic;
-    private double num_op_representatives;
-    private List<PartySplit> seats_votes;
+    private double numOpportunityRepresentatives;
+    private List<PartySplit> seatsVotes;
 }

@@ -15,6 +15,6 @@ import java.util.List;
 @Builder
 public class SampleMap {
     private String state;
-    private String district_type;
+    private String districtType;
     private List<Feature> features;
 }

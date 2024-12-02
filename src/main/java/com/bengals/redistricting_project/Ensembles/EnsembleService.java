@@ -1,6 +1,6 @@
 package com.bengals.redistricting_project.Ensembles;
 
-import com.bengals.redistricting_project.Ensembles.Collections.EnactedAvg;
+import com.bengals.redistricting_project.Ensembles.Collections.EnactedAverage;
 import com.bengals.redistricting_project.Ensembles.Collections.PartyBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.RacialBoxWhisker;
 import com.bengals.redistricting_project.Ensembles.Collections.Summary;
@@ -21,25 +21,25 @@ public class EnsembleService {
     }
 
     public RacialBoxWhisker getRacialDistribution(String state, String districtType) {
-        if (districtType.equalsIgnoreCase("smd")) return ensembleRepository.findByState(state).getSmd().getRacial().getRacial_box_whisker();
-        else return ensembleRepository.findByState(state).getMmd().getRacial().getRacial_box_whisker();
+        if (districtType.equalsIgnoreCase("smd")) return ensembleRepository.findByState(state).getSmd().getRacial().getRacialBoxWhisker();
+        else return ensembleRepository.findByState(state).getMmd().getRacial().getRacialBoxWhisker();
     }
 
-    public RacialOpportunityDTO getRacialOpportunity(String state, String districtType) {
-        return RacialOpportunityDTO.toRacialOpportunityDTO(ensembleRepository.findByState(state), districtType);
+    public RacialOpportunityDto getRacialOpportunity(String state, String districtType) {
+        return RacialOpportunityDto.toRacialOpportunityDTO(ensembleRepository.findByState(state), districtType);
     }
 
     public PartyBoxWhisker getPartyPopDistribution(String state, String districtType) {
-        if (districtType.equalsIgnoreCase("smd")) return ensembleRepository.findByState(state).getSmd().getParty().getParty_box_whisker();
-        else return ensembleRepository.findByState(state).getMmd().getParty().getParty_box_whisker();
+        if (districtType.equalsIgnoreCase("smd")) return ensembleRepository.findByState(state).getSmd().getParty().getPartyBoxWhisker();
+        else return ensembleRepository.findByState(state).getMmd().getParty().getPartyBoxWhisker();
     }
 
-    public PartySplitDistributionDTO getPartySplitDistribution(String state, String districtType) {
-        return PartySplitDistributionDTO.toPartySplitDistributionDTO(ensembleRepository.findByState(state), districtType);
+    public PartySplitDistributionDto getPartySplitDistribution(String state, String districtType) {
+        return PartySplitDistributionDto.toPartySplitDistributionDTO(ensembleRepository.findByState(state), districtType);
     }
 
-    public EnactedAvg getComparisonEnactedAvg(String state) {
-        return ensembleRepository.findByState(state).getMmd().getEnacted_vs_avg();
+    public EnactedAverage getComparisonEnactedAvg(String state) {
+        return ensembleRepository.findByState(state).getMmd().getEnactedAverage();
     }
 
 }

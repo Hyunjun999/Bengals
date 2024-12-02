@@ -1,5 +1,6 @@
 package com.bengals.redistricting_project.Ensembles.Collections;
 
+import com.bengals.redistricting_project.Ensembles.DTO.PartySplitDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Party {
-    private PartyBoxWhisker party_box_whisker;
-    private List<PartySplitForBar> party_splits;
-    private PartySplit avg_seat_share;
+    private PartyBoxWhisker partyBoxWhisker;
+    private List<PartySplitDto> partySplits;
+    private PartySplit averageSeatShare;
 }

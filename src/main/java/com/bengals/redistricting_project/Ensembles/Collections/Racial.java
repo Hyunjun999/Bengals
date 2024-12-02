@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Racial {
-    private RacialBoxWhisker racial_box_whisker;
-    private OpDistricts op_districts;
-    private OpRepresentatives op_representatives;
+    private RacialBoxWhisker racialBoxWhisker;
+    private OpportunityDistricts opportunityDistricts;
+    private OpportunityRepresentatives opportunityRepresentatives;
 }

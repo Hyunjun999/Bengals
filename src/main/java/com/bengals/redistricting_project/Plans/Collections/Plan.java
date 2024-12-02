@@ -20,26 +20,24 @@ import java.util.List;
 @Builder
 
 public class Plan {
-    @Id
-    private ObjectId id;
     private String state;
-    private String district_type;
-    private int total_pop;
-    private int vote_pop;
-    private int total_wht;
-    private int total_asn;
-    private int total_blk;
-    private int total_hsp;
-    private double non_white_ratio;
-    private double white_ratio;
+    private String districtType;
+    private int totalPop;
+    private int votePop;
+    private int totalWht;
+    private int totalAsn;
+    private int totalBlk;
+    private int totalHsp;
+    private double nonWhiteRatio;
+    private double whiteRatio;
     private int republican;
     private int democratic;
-    private int num_op_districts;
-    private int num_safe_districts;
-    private double op_threshold;
+    private int numOpportunityDistricts;
+    private int numSafeDistricts;
+    private double opportunityThreshold;
     private String reason;
     private List<Feature> features;
-    private List<PartySplit> seats_votes;
+    private List<PartySplit> seatsVotes;
     private double bias;
     private double symmetry;
     private PartySplit responsiveness;

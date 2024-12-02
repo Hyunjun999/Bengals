@@ -15,8 +15,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 
 public class Ensemble {
-    @Id
-    private ObjectId id;
     private String state;
     private SMD smd;
     private MMD mmd;

@@ -13,5 +13,5 @@ public class MMD {
     private Summary summary;
     private Racial racial;
     private Party party;
-    private EnactedAvg enacted_vs_avg;
+    private EnactedAverage enactedAverage;
 }

@@ -12,11 +12,11 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Summary {
-    private int num_dist_plan;
-    private double avg_min_max_diff;
-    private MinorRep avg_num_minor_representatives;
-    private PartySplit avg_party_split;
-    private List<PartySplit> seats_votes;
+    private int numDistPlan;
+    private double averageMinMaxDifference;
+    private double averageNonWhiteRepresentatives;
+    private PartySplit averagePartySplit;
+    private List<PartySplit> seatsVotes;
     private double bias;
     private double symmetry;
     private PartySplit responsiveness;

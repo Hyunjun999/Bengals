@@ -15,5 +15,5 @@ public class RacialBoxWhisker {
     private List<BoxWhiskerElement> blk;
     private List<BoxWhiskerElement> asn;
     private List<BoxWhiskerElement> hsp;
-    private List<BoxWhiskerElement> non_wht;
+    private List<BoxWhiskerElement> nonWht;
 }
