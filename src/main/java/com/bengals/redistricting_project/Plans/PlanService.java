@@ -29,8 +29,8 @@ public class PlanService {
             String partyWithVotes = "";
             for (Feature feature : features) {
                 Property property = feature.getProperties();
-                String[] winningParty = property.getWin_pty_votes().split(",");
-                String[] winningVotes = property.getWin_pty_votes().split(",");
+                String[] winningParty = property.getWinningParty().split(",");
+                String[] winningVotes = property.getWinningPartywithVotes().split(",");
                 for (int i = 0; i < winningParty.length; i++) {
                     String sub = winningParty[i] + "(" + winningVotes[i] + "), ";
                     partyWithVotes = partyWithVotes + sub;
