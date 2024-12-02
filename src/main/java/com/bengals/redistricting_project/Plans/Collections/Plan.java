@@ -22,12 +22,12 @@ import java.util.List;
 public class Plan {
     private String state;
     private String districtType;
-    private int totalPop;
-    private int votePop;
-    private int totalWht;
-    private int totalAsn;
-    private int totalBlk;
-    private int totalHsp;
+    private int totalPopulation;
+    private int votePopulation;
+    private int totalWhite;
+    private int totalAsian;
+    private int totalBlack;
+    private int totalHispanic;
     private double nonWhiteRatio;
     private double whiteRatio;
     private int republican;

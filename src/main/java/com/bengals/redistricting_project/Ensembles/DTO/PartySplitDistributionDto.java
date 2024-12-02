@@ -14,19 +14,19 @@ import java.util.List;
 @Builder
 public class PartySplitDistributionDto {
     private List<PartySplitDto> partySplitsBar;
-    private PartySplit avgSeatShare;
+    private PartySplit averageSeatShare;
 
     public static PartySplitDistributionDto toPartySplitDistributionDTO(Ensemble ensemble, String districtType) {
         PartySplitDistributionDto.PartySplitDistributionDtoBuilder partySplitDistributionDTOBuilder = PartySplitDistributionDto.builder();
         List<PartySplitDto> partySplitsBar = null;
-        PartySplit avgSeatShare = null;
+        PartySplit averageSeatShare = null;
         if (districtType.equalsIgnoreCase("smd")) {
             partySplitsBar = ensemble.getSmd().getParty().getPartySplits();
-            avgSeatShare = ensemble.getSmd().getParty().getAverageSeatShare();
+            averageSeatShare = ensemble.getSmd().getParty().getAverageSeatShare();
         } else {
             partySplitsBar = ensemble.getMmd().getParty().getPartySplits();
-            avgSeatShare = ensemble.getMmd().getParty().getAverageSeatShare();
+            averageSeatShare = ensemble.getMmd().getParty().getAverageSeatShare();
         }
-        return partySplitDistributionDTOBuilder.partySplitsBar(partySplitsBar).avgSeatShare(avgSeatShare).build();
+        return partySplitDistributionDTOBuilder.partySplitsBar(partySplitsBar).averageSeatShare(averageSeatShare).build();
     }
 }

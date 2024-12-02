@@ -13,8 +13,8 @@ import java.util.List;
 @Builder
 
 public class OpportunityDistrictsDto {
-    List<OpportunityDistrictsElementDto> blk;
-    List<OpportunityDistrictsElementDto> asn;
-    List<OpportunityDistrictsElementDto> hsp;
-    List<OpportunityDistrictsElementDto> nonWht;
+    List<OpportunityDistrictsElementDto> black;
+    List<OpportunityDistrictsElementDto> asian;
+    List<OpportunityDistrictsElementDto> hispanic;
+    List<OpportunityDistrictsElementDto> nonWhite;
 }

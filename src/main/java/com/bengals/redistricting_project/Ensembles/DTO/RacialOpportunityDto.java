@@ -13,8 +13,8 @@ import java.util.*;
 @AllArgsConstructor
 @Builder
 public class RacialOpportunityDto {
-    private OpportunityDistrictsDto opDistrictsBar;
-    private OpportunityRepresentativesDto opRepresentativesBar;
+    private OpportunityDistrictsDto opportunityDistrictsBar;
+    private OpportunityRepresentativesDto opportunityRepresentativesBar;
 
     public static RacialOpportunityDto toRacialOpportunityDTO(Ensemble ensemble, String districtType) {
         RacialOpportunityDto.RacialOpportunityDtoBuilder racialOpportunityDTOBuilder = RacialOpportunityDto.builder();
@@ -36,17 +36,17 @@ public class RacialOpportunityDto {
 //        opDistrictsDTOBuilder.nonWht(opPerRace("non_wht", opDistricts));
 
         OpportunityDistrictsDto opportunityDistrictsDTO = OpportunityDistrictsDto.builder()
-                .blk(getOpDistrictsDto(racial.getOpportunityDistricts().getBlk()))
-                .asn(getOpDistrictsDto(racial.getOpportunityDistricts().getAsn()))
-                .hsp(getOpDistrictsDto(racial.getOpportunityDistricts().getHsp()))
-                .nonWht(getOpDistrictsDto(racial.getOpportunityDistricts().getNonWht()))
+                .black(getOpDistrictsDto(racial.getOpportunityDistricts().getBlack()))
+                .asian(getOpDistrictsDto(racial.getOpportunityDistricts().getAsian()))
+                .hispanic(getOpDistrictsDto(racial.getOpportunityDistricts().getHispanic()))
+                .nonWhite(getOpDistrictsDto(racial.getOpportunityDistricts().getNonWhite()))
                 .build();
 
         OpportunityRepresentativesDto opportunityRepresentativesDTO = OpportunityRepresentativesDto.builder()
-                .blk(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getBlk()))
-                .asn(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getAsn()))
-                .hsp(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getHsp()))
-                .nonWht(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getNonWht()))
+                .black(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getBlack()))
+                .asian(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getAsian()))
+                .hispanic(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getHispanic()))
+                .nonWhite(getOpRepresentativesDto(racial.getOpportunityRepresentatives().getNonWhite()))
                 .build();
 
 //        OpRepresentatives opRepresentatives = null;
@@ -62,8 +62,8 @@ public class RacialOpportunityDto {
 //        opRepresentativesDTOBuilder.nonWht(repPerRace("non_wht", opRepresentatives));
 
         return racialOpportunityDTOBuilder
-                .opDistrictsBar(opportunityDistrictsDTO)
-                .opRepresentativesBar(opportunityRepresentativesDTO)
+                .opportunityDistrictsBar(opportunityDistrictsDTO)
+                .opportunityRepresentativesBar(opportunityRepresentativesDTO)
                 .build();
     }
 

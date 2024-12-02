@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Summary {
-    private int numDistPlan;
+    private int numDistrictPlan;
     private double averageMinMaxDifference;
     private double averageNonWhiteRepresentatives;
     private PartySplit averagePartySplit;

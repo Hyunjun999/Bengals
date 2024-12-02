@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class RacialBoxWhisker {
-    private List<BoxWhiskerElement> blk;
-    private List<BoxWhiskerElement> asn;
-    private List<BoxWhiskerElement> hsp;
-    private List<BoxWhiskerElement> nonWht;
+    private List<BoxWhiskerElement> black;
+    private List<BoxWhiskerElement> asian;
+    private List<BoxWhiskerElement> hispanic;
+    private List<BoxWhiskerElement> nonWhite;
 }

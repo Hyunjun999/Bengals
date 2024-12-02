@@ -23,7 +23,7 @@ public class PlanService {
 
     public Plan getPlan(String state, String reason, String districtType) {
         Plan plan = planRepository.findBy(state, reason, districtType).get(0);
-        if(districtType.equalsIgnoreCase("mmd")){
+        if (districtType.equalsIgnoreCase("mmd")) {
             List<Feature> features = plan.getFeatures();
             List<Feature> featuresDTO = new ArrayList<>();
             String partyWithVotes = "";
@@ -36,7 +36,7 @@ public class PlanService {
                     partyWithVotes = partyWithVotes + sub;
                 }
                 partyWithVotes = partyWithVotes.substring(0, partyWithVotes.length() - 2);
-                property.setWinPty(partyWithVotes);
+                property.setWinningParty(partyWithVotes);
                 featuresDTO.add(feature);
             }
             plan.setFeatures(featuresDTO);

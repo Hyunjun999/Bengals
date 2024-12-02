@@ -15,8 +15,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class State {
     private String state;
-    private int totalPop;
-    private RacialPop racialPop;
+    private int totalPopulation;
+    private RacialPop racialPopulation;
     private int totalSeats;
     private double republican;
     private double democratic;

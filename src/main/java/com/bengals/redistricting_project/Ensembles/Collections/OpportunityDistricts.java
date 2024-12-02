@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class OpportunityDistricts {
-    private List<OpportunityDistrictsElement> blk;
-    private List<OpportunityDistrictsElement> asn;
-    private List<OpportunityDistrictsElement> hsp;
-    private List<OpportunityDistrictsElement> nonWht;
+    private List<OpportunityDistrictsElement> black;
+    private List<OpportunityDistrictsElement> asian;
+    private List<OpportunityDistrictsElement> hispanic;
+    private List<OpportunityDistrictsElement> nonWhite;
 }

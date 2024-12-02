@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class OpportunityRepresentativesDto {
-    private List<OpportunityRepresentativesElementDto> blk;
-    private List<OpportunityRepresentativesElementDto> asn;
-    private List<OpportunityRepresentativesElementDto> hsp;
-    private List<OpportunityRepresentativesElementDto> nonWht;
+    private List<OpportunityRepresentativesElementDto> black;
+    private List<OpportunityRepresentativesElementDto> asian;
+    private List<OpportunityRepresentativesElementDto> hispanic;
+    private List<OpportunityRepresentativesElementDto> nonWhite;
 }
