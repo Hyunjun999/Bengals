@@ -23,6 +23,27 @@ public class PlanService {
     }
 
     public Plan getPlan(String state, String reason, String districtType) {
+        String shortenedReason = getShortenedReason(reason);
+        Plan plan = planRepository.findBy(state, shortenedReason, districtType).get(0);
+        if (districtType.equalsIgnoreCase("mmd")) {
+            List<Feature> updatedFeatures = processFeatures(plan.getFeatures());
+            plan.setFeatures(updatedFeatures);
+        }
+        return plan;
+    }
+
+    public SampleMap getSampleMMDMap(String state) {
+        SampleMap sampleMap = sampleMapRepository.findBy(state, "mmd");
+        List<Feature> features = sampleMap.getFeatures();
+        sampleMap.setFeatures(processFeatures(features));
+        return sampleMap;
+    }
+
+    public SampleMap getEnactedMap(String state) {
+        return sampleMapRepository.findBy(state, "smd");
+    }
+
+    private String getShortenedReason(String reason) {
         Map<String, String> reasonMap = Map.of(
                 "republican", "rep",
                 "democratic", "dem",
@@ -30,35 +51,27 @@ public class PlanService {
                 "white-max", "wht_prob_max",
                 "non-white-max", "non_wht_prob_max"
         );
-        String shortenedReason = reasonMap.getOrDefault(reason, reason);
-        Plan plan = planRepository.findBy(state, shortenedReason, districtType).get(0);
-        if (districtType.equalsIgnoreCase("mmd")) {
-            List<Feature> features = plan.getFeatures();
-            List<Feature> featuresDTO = new ArrayList<>();
-            String partyWithVotes = "";
-            for (Feature feature : features) {
-                Property property = feature.getProperties();
-                String[] winningParty = property.getWinningParty().split(",");
-                String[] winningVotes = property.getWinningPartyVotes().split(",");
-                for (int i = 0; i < winningParty.length; i++) {
-                    String votes = winningParty[i] + "(" + winningVotes[i] + "), ";
-                    partyWithVotes = partyWithVotes + votes;
-                }
-                partyWithVotes = partyWithVotes.substring(0, partyWithVotes.length() - 2);
-                property.setWinningParty(partyWithVotes);
-                featuresDTO.add(feature);
-            }
-            plan.setFeatures(featuresDTO);
+        return reasonMap.getOrDefault(reason, reason);
+    }
+
+    private List<Feature> processFeatures(List<Feature> features) {
+        List<Feature> featuresDTO = new ArrayList<>();
+        for (Feature feature : features) {
+            Property property = feature.getProperties();
+            String partyWithVotes = generatePartyWithVotes(property);
+            property.setWinningParty(partyWithVotes);
+            featuresDTO.add(feature);
         }
-        return plan;
+        return featuresDTO;
     }
 
-    public SampleMap getSampleMMDMap(String state) {
-        System.out.println(sampleMapRepository.findBy(state, "mmd"));
-        return sampleMapRepository.findBy(state, "mmd");
-    }
-
-    public SampleMap getEnactedMap(String state) {
-        return sampleMapRepository.findBy(state, "smd");
+    private String generatePartyWithVotes(Property property) {
+        String[] winningParty = property.getWinningParty().split(",");
+        String[] winningVotes = property.getWinningPartyVotes().split(",");
+        StringBuilder partyWithVotes = new StringBuilder();
+        for (int i = 0; i < winningParty.length; i++) {
+            partyWithVotes.append(winningParty[i]).append("(").append(winningVotes[i]).append("), ");
+        }
+        return partyWithVotes.substring(0, partyWithVotes.length() - 2);
     }
 }
