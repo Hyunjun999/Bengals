@@ -28,5 +28,4 @@ public class PlanController {
     public SampleMap getEnactedMap(@PathVariable String state) {
         return planService.getEnactedMap(state);
     }
-
 }

@@ -44,7 +44,7 @@ public class PlanService {
         return reasonMap.get(reason);
     }
 
-    private List<Feature> updateFeatures (List<Feature> features) {
+    private List<Feature> updateFeatures(List<Feature> features) {
         List<Feature> updatedFeatures = new ArrayList<>();
 
         for (Feature feature : features) {
