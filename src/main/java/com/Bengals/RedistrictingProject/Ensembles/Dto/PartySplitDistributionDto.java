@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @Builder
 public class PartySplitDistributionDto {
-    private List<PartySplitDto> partySplitsBar;
+    private List<PartySplitElement> partySplitsBar;
     private PartySplit averageSeatShare;
 
     public static PartySplitDistributionDto toPartySplitDistributionDto(Ensemble ensemble, String districtType) {
