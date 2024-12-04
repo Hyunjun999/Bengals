@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class PartySplitDto {
-    private int name;
-    private int republican;
-    private int democratic;
+    private String name;
+    private int value;
 }
