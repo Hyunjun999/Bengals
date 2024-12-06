@@ -7,5 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class OpportunityRepresentativesElementDto {
     private int name;
-    private int opportunityRepresentatives;
+    private int numOpportunityRepresentatives;
 }
