@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 @Service
 public class PlanService {
@@ -61,8 +63,12 @@ public class PlanService {
         String[] winningParty = property.getWinningParty().split(",");
         String[] winningVotes = property.getWinningPartyVotes().split(",");
 
+        NumberFormat numberFormat = NumberFormat.getInstance(Locale.US);
+
         return IntStream.range(0, winningParty.length)
-                .mapToObj(i -> String.format("%s(%s)", winningParty[i], winningVotes[i]))
+                .mapToObj(i -> String.format("%s(%s)",
+                        winningParty[i],
+                        numberFormat.format(Integer.parseInt(winningVotes[i]))))
                 .collect(Collectors.joining(", "));
     }
 

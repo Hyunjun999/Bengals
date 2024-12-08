@@ -1,5 +1,6 @@
 package com.bengals.redistricting_project.Ensembles.Dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -7,5 +8,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class OpportunityDistrictsElementDto {
     private int name;
-    private int numOpportunityDistricts;
+    @JsonProperty("numberOfPlans")
+    private int numOpDistricts;
 }

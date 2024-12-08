@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 public class PartySplitElement {
     private String name;
-    @JsonProperty("numDistricts")
+    @JsonProperty("numberOfPlans")
     private int value;
 }

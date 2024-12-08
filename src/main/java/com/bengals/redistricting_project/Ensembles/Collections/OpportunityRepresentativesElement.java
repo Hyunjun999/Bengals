@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class OpportunityRepresentativesElement {
-    private int numOpportunityRepresentatives;
+    private int numOpRepresentatives;
 }

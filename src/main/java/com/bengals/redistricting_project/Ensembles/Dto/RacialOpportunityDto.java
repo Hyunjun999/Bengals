@@ -42,7 +42,7 @@ public class RacialOpportunityDto {
         List<OpportunityDistrictsElementDto> elementDto = new ArrayList<>();
 
         for (OpportunityDistrictsElement element : raceSelected) {
-            map.merge(element.getNumOpportunityDistricts(), 1, Integer::sum);
+            map.merge(element.getNumOpDistricts(), 1, Integer::sum);
         }
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
@@ -57,7 +57,7 @@ public class RacialOpportunityDto {
         List<OpportunityRepresentativesElementDto> elementDto = new ArrayList<>();
 
         for (OpportunityRepresentativesElement element : raceSelected) {
-            map.merge(element.getNumOpportunityRepresentatives(), 1, Integer::sum);
+            map.merge(element.getNumOpRepresentatives(), 1, Integer::sum);
         }
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
