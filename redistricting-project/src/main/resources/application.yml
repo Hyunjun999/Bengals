@@ -1,0 +1,5 @@
+#spring.application.name=bengals-redistricting
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://bengals:bengals416cs@cluster0.wb7um.mongodb.net/hi-db?retryWrites=true&w=majority&appName=Cluster0
