@@ -18,23 +18,23 @@ const StateInfo = () => {
   const [data, setData] = useState({});
   const apis = [
     {
-      name: "StateInfo",
+      name: "State Information",
       address: `/${selectedStateAbbr}`,
     },
     {
-      name: "EnsembleSMD",
+      name: "Ensemble SMD",
       address: `/${selectedStateAbbr}/ensemble/smd`,
     },
     {
-      name: "EnsembleMMD",
+      name: "Ensemble MMD",
       address: `/${selectedStateAbbr}/ensemble/mmd`,
     },
     {
-      name: "RandomPlanSMD",
+      name: "Interesting SMD Plan",
       address: `/${selectedStateAbbr}/random/smd`,
     },
     {
-      name: "RandomPlanMMD",
+      name: "Interesting MMD Plan",
       address: `/${selectedStateAbbr}/random/mmd`,
     },
   ];
