@@ -1,5 +1,5 @@
 import json, geopandas as gpd, numpy as np, pandas as pd
-from common import *
+from Scripts.common import *
 
 data_format = {
     "state": "",

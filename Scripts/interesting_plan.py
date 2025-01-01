@@ -1,7 +1,7 @@
 import json, geopandas as gpd, pandas as pd
 from shapely.geometry import mapping
 from math import prod
-from common import *
+from Scripts.common import *
 
 
 def calculate_smd_data(row: gpd.GeoDataFrame):
